@@ -49,7 +49,7 @@ function NavBar() {
                     <a className="dropdown-item">Produtos</a>
                 </Link>
                 <Link href="/categories">
-                    <a className="dropdown-item">Categories</a>
+                    <a className="dropdown-item">Categorias</a>
                 </Link>
             </>
         )

@@ -66,6 +66,7 @@ const Home = (props) => {
         <title>Home Page</title>
       </Head>
 
+      {/* <Filter state={state} /> */}
       <Carousel state={state} />
       {
         auth.user && auth.user.role === 'admin' &&
@@ -76,7 +77,7 @@ const Home = (props) => {
           <button className="btn btn-danger ml-2"
           data-toggle="modal" data-target="#exampleModal"
           onClick={handleDeleteAll}>
-            DELETE ALL
+            Deletar tudo
           </button>
         </div>
       }
@@ -84,7 +85,7 @@ const Home = (props) => {
       <div className="products">
         {
           products.length === 0 
-          ? <h2>No Products</h2>
+          ? <h2>Nenhum produto</h2>
 
           : products.map(product => (
             <ProductItem key={product._id} product={product} handleCheck={handleCheck} />
@@ -96,7 +97,7 @@ const Home = (props) => {
         props.result < page * 6 ? ""
         : <button className="btn btn-outline-info d-block mx-auto mb-4"
         onClick={handleLoadmore}>
-          Load more
+          Mostar mais
         </button>
       }
     
