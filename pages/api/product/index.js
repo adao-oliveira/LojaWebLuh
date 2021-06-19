@@ -26,6 +26,8 @@ class APIfeatures {
         const excludeFields = ['page', 'sort', 'limit']
         excludeFields.forEach(el => delete(queryObj[el]))
 
+        if(queryObj.category !== 'all')
+            this.query.find({category: queryObj.category})
         if(queryObj.title !== 'all')
             this.query.find({title: {$regex: queryObj.title}})
 
@@ -75,14 +77,14 @@ const createProduct = async (req, res) => {
         const result = await auth(req, res)
         if(result.role !== 'admin') return res.status(400).json({err: 'Authentication is not valid.'})
 
-        const {title, price, inStock, description, content, images} = req.body
+        const {title, price, inStock, description, content, category, images} = req.body
 
-        if(!title || !price || !inStock || !description || !content || images.length === 0)
+        if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
         return res.status(400).json({err: 'Please add all the fields.'})
 
 
         const newProduct = new Products({
-            title: title.toLowerCase(), price, inStock, description, content, images
+            title: title.toLowerCase(), price, inStock, description, content, category, images
         })
 
         await newProduct.save()

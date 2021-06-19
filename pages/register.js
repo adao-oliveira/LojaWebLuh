@@ -48,7 +48,7 @@ const Register = () => {
       </Head>
 
       <form className="mx-auto my-4" style={{ maxWidth: '500px' }} onSubmit={handleSubmit}>
-        <div className="form-group mt-48">
+        <div className="form-group">
           <label htmlFor="name">Nome</label>
           <input type="text" className="form-control" id="name"
             name="name" value={name} onChange={handleChangeInput} />
@@ -58,24 +58,25 @@ const Register = () => {
           <label htmlFor="exampleInputEmail1">E-mail</label>
           <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             name="email" value={email} onChange={handleChangeInput} />
+          <small id="emailHelp" className="form-text text-muted"></small>
         </div>
 
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Crie uma Senha</label>
+          <label htmlFor="exampleInputPassword1">Senha</label>
           <input type="password" className="form-control" id="exampleInputPassword1"
             name="password" value={password} onChange={handleChangeInput} />
         </div>
 
         <div className="form-group">
-          <label htmlFor="exampleInputPassword2">Confirme a Senha</label>
+          <label htmlFor="exampleInputPassword2">Confirmar Senha</label>
           <input type="password" className="form-control" id="exampleInputPassword2"
             name="cf_password" value={cf_password} onChange={handleChangeInput} />
         </div>
 
-        <button type="submit" className="btn btn-dark w-100">Registrar</button>
+        <button type="submit" className="btn btn-dark w-100">Register</button>
 
         <p className="my-2">
-          Já tem uma conta? <Link href="/signin"><a style={{ color: 'crimson' }}>Fazer Login</a></Link>
+          Já tem uma conta? <Link href="/signin"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
         </p>
       </form>
     </div>

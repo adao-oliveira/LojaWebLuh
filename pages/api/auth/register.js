@@ -22,7 +22,7 @@ const register = async (req, res) => {
         if(errMsg) return res.status(400).json({err: errMsg})
 
         const user = await Users.findOne({ email })
-        if(user) return res.status(400).json({err: 'Esse e-mail já existe'})
+        if(user) return res.status(400).json({err: 'This email already exists.'})
 
         const passwordHash = await bcrypt.hash(password, 12)
 
@@ -31,7 +31,7 @@ const register = async (req, res) => {
         })
 
         await newUser.save()
-        res.json({msg: "Registrado com Sucesso!"})
+        res.json({msg: "Register Success!"})
 
     }catch(err){
         return res.status(500).json({err: err.message})

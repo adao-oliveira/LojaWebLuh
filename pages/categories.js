@@ -47,7 +47,7 @@ const Categories = () => {
                 <title>Categories</title>
             </Head>
 
-            <div className="input-group mb-3 mt-48">
+            <div className="input-group mb-3">
                 <input type="text" className="form-control"
                 placeholder="Add a new category" value={name}
                 onChange={e => setName(e.target.value)} />

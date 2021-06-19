@@ -95,7 +95,7 @@ const Profile = () => {
             <section className="row text-secondary my-3">
                 <div className="col-md-4">
                     <h3 className="text-center text-uppercase">
-                        {auth.user.role === 'user' ? 'User Profile' : 'Perfil Admin'}
+                        {auth.user.role === 'user' ? 'User Profile' : 'Admin Profile'}
                     </h3>
 
                     <div className="avatar">
@@ -103,7 +103,7 @@ const Profile = () => {
                         alt="avatar" />
                         <span>
                             <i className="fas fa-camera"></i>
-                            <p>Atualizar</p>
+                            <p>Muadar</p>
                             <input type="file" name="file" id="file_up"
                             accept="image/*" onChange={changeAvatar} />
                         </span>
@@ -111,35 +111,33 @@ const Profile = () => {
 
                     <div className="form-group">
                         <label htmlFor="name">Nome</label>
-                        <input type="text" name="name" value={name} className="form-control"
-                        placeholder="Seu nome" onChange={handleChange} />
+                        <input type="text" name="name" value={name} className="form-control" onChange={handleChange} />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="email">E-mail</label>
+                        <label htmlFor="email">Email</label>
                         <input type="text" name="email" defaultValue={auth.user.email} 
                         className="form-control" disabled={true} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password">Nova Senha</label>
-                        <input type="password" name="password" value={password} className="form-control"
-                        placeholder="Sua nova Senha" onChange={handleChange} />
+                        <input type="password" name="password" value={password} className="form-control" onChange={handleChange} />
                     </div>
 
                     <div className="form-group">
-                        <input type="password" name="cf_password" value={cf_password} className="form-control"
-                        placeholder="Confirmar senha" onChange={handleChange} />
+                        <label htmlFor="cf_password">Confirm New Password</label>
+                        <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
                     </div>
 
                     <button className="btn btn-info" disabled={notify.loading}
                     onClick={handleUpdateProfile}>
-                        Salvar
+                        Atualizar
                     </button>
                 </div>
 
                 <div className="col-md-8">
-                    <h3 className="text-uppercase">Pedidos</h3>
+                    <h3 className="text-uppercase">Orders</h3>
 
                     <div className="my-3 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"
@@ -150,7 +148,7 @@ const Profile = () => {
                                     <td className="p-2">data</td>
                                     <td className="p-2">total</td>
                                     <td className="p-2">entregue</td>
-                                    <td className="p-2">pago</td>
+                                    <td className="p-2">pedido</td>
                                 </tr>
                             </thead>
 

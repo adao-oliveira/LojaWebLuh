@@ -11,12 +11,16 @@ const ProductsManager = () => {
         price: 0,
         inStock: 0,
         description: '',
-        content: ''
+        content: '',
+        category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const {title, price, inStock, description, content} = product
+    const {title, price, inStock, description, content, category} = product
 
     const [images, setImages] = useState([])
+
+    const {state, dispatch} = useContext(DataContext)
+    const {categories, auth} = state
 
     const router = useRouter()
     const {id} = router.query
@@ -110,7 +114,7 @@ const ProductsManager = () => {
     return(
         <div className="products_manager">
             <Head>
-                <title>Lista de Produtos</title>
+                <title>Products Manager</title>
             </Head>
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
@@ -121,14 +125,14 @@ const ProductsManager = () => {
 
                     <div className="row">
                         <div className="col-sm-6">
-                            <label htmlFor="price">Preço</label>
+                            <label htmlFor="price">Price</label>
                             <input type="number" name="price" value={price}
                             placeholder="Price" className="d-block w-100 p-2"
                             onChange={handleChangeInput} />
                         </div>
 
                         <div className="col-sm-6">
-                            <label htmlFor="price">Em estoque</label>
+                            <label htmlFor="price">In Stock</label>
                             <input type="number" name="inStock" value={inStock}
                             placeholder="inStock" className="d-block w-100 p-2"
                             onChange={handleChangeInput} />
@@ -142,6 +146,20 @@ const ProductsManager = () => {
                     <textarea name="content" id="content" cols="30" rows="6"
                     placeholder="Content" onChange={handleChangeInput}
                     className="d-block my-4 w-100 p-2" value={content} />
+
+                    <div className="input-group-prepend px-0 my-2">
+                        <select name="category" id="category" value={category}
+                        onChange={handleChangeInput} className="custom-select text-capitalize">
+                            <option value="all">All Products</option>
+                            {
+                                categories.map(item => (
+                                    <option key={item._id} value={item._id}>
+                                        {item.name}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
 
                     <button type="submit" className="btn btn-info my-2 px-4">
                         {onEdit ? 'Update': 'Create'}

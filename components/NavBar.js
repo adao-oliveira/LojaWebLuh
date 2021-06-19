@@ -20,7 +20,7 @@ function abrefecha() {
 function NavBar() {
     const router = useRouter()
     const { state, dispatch } = useContext(DataContext)
-    const { auth, carrinho } = state
+    const { auth, cart } = state
 
 
     const isActive = (r) => {
@@ -81,7 +81,7 @@ function NavBar() {
     }
 
     return (
-        <header className="main-header mt-32">
+        <header className="main-header mt-48">
             <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav">
                 <div className="container">
                     <div className="navbar-header">
@@ -101,14 +101,10 @@ function NavBar() {
                                 <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047756/logo_evcyld.jpg" className="logo" alt="Lu Cakes" />
                             </a>
                         </Link>
-                        <ul
-                            className="nav navbar-nav ml-auto"
-                            data-in="fadeInDown"
-                            data-out="fadeOutUp"
-                        >
+                        <ul className="nav navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link href="/carrinho">
-                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/carrinho')}>
+                                <Link href="/cart">
+                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/cart')}>
                                         <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
                                             <span className="position-absolute"
                                                 style={{
@@ -120,7 +116,7 @@ function NavBar() {
                                                     color: 'white',
                                                     fontSize: '14px'
                                                 }}>
-                                                {carrinho.length}
+                                                {cart.length}
                                             </span>
                                         </i>
                                     </a>
@@ -129,12 +125,7 @@ function NavBar() {
                         </ul>
                     </div>
                     <div className="navbar-collapse collapse" id="navbar-menu">
-                        <ul
-                            className="nav navbar-nav ml-auto"
-                            data-in="fadeInDown"
-                            data-out="fadeOutUp"
-                            id="menu"
-                        >
+                        <ul className="nav navbar-nav ml-auto" id="menu">
                             <li className="nav-item">
                                 <Link href="/">
                                     <a className="nav-link">Home</a>
@@ -161,8 +152,8 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/carrinho">
-                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/carrinho')}>
+                                <Link href="/cart">
+                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/cart')}>
                                         <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
                                             <span className="position-absolute"
                                                 style={{
@@ -174,7 +165,7 @@ function NavBar() {
                                                     color: 'white',
                                                     fontSize: '14px'
                                                 }}>
-                                                {carrinho.length}
+                                                {cart.length}
                                             </span>
                                         </i>
                                     </a>

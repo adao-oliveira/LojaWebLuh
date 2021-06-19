@@ -19,7 +19,7 @@ const createCategory = async (req, res) => {
     try {
         const result = await auth(req, res)
         if(result.role !== 'admin')
-        return res.status(400).json({err: "A Autenticação não é válida"})
+        return res.status(400).json({err: "Authentication is not valid."})
 
         const { name } = req.body
         if(!name) return res.status(400).json({err: "Name can not be left blank."})
@@ -28,7 +28,7 @@ const createCategory = async (req, res) => {
 
         await newCategory.save()
         res.json({
-            msg: 'Successo! criou uma nova categoria',
+            msg: 'Success! Created a new category.',
             newCategory
         })
 

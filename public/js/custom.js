@@ -1,6 +1,18 @@
 (function($) {
   "use strict";
 
+  /* ..............................................
+	   Fixed Menu
+	   ................................................. */
+
+  $(window).on("scroll", function() {
+    if ($(window).scrollTop() > 50) {
+      $(".main-header").addClass("fixed-menu");
+    } else {
+      $(".main-header").removeClass("fixed-menu");
+    }
+  });
+
   // close dropdown menu when clicking on an element
 
   $(document).on('click', function(event) {

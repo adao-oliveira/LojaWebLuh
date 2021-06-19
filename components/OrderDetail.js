@@ -31,37 +31,37 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
             <div key={order._id} style={{margin: '20px auto'}} className="row justify-content-around">
 
                 <div className="text-uppercase my-3" style={{maxWidth: '600px'}}>
-                    <h2 className="text-break">Pedido {order._id}</h2>
+                    <h2 className="text-break">Order {order._id}</h2>
 
                     <div className="mt-4 text-secondary">
-                        <h3>Shopping</h3>
-                        <p>Nome: {order.user.name}</p>
-                        <p>E-mail: {order.user.email}</p>
-                        <p>Endereço: {order.address}</p>
-                        <p>Telefone: {order.mobile}</p>
+                        <h3>Shipping</h3>
+                        <p>Name: {order.user.name}</p>
+                        <p>Email: {order.user.email}</p>
+                        <p>Address: {order.address}</p>
+                        <p>Mobile: {order.mobile}</p>
 
                         <div className={`alert ${order.delivered ? 'alert-success' : 'alert-danger'}
                         d-flex justify-content-between align-items-center`} role="alert">
                             {
-                                order.delivered ? `Entregue em ${order.updatedAt}` : 'Não Entregue'
+                                order.delivered ? `Deliverd on ${order.updatedAt}` : 'Not Delivered'
                             }
                             {
                                 auth.user.role === 'admin' && !order.delivered &&
                                 <button className="btn btn-dark text-uppercase"
                                 onClick={() => handleDelivered(order)}>
-                                    Marcar como entregue
+                                    Mark as delivered
                                 </button>
                             }
                             
                         </div>
 
-                        <h3>Pagamento</h3>
+                        <h3>Payment</h3>
                         {
-                            order.method && <h6>Método: <em>{order.method}</em></h6>
+                            order.method && <h6>Method: <em>{order.method}</em></h6>
                         }
                         
                         {
-                            order.paymentId && <p>ID do Pagamento: <em>{order.paymentId}</em></p>
+                            order.paymentId && <p>PaymentId: <em>{order.paymentId}</em></p>
                         }
                         
                         <div className={`alert ${order.paid ? 'alert-success' : 'alert-danger'}
@@ -75,7 +75,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                         <div>
                             <h3>Order Items</h3>
                             {
-                                order.carrinho.map(item => (
+                                order.cart.map(item => (
                                     <div className="row border-bottom mx-0 p-2 justify-content-betwenn
                                     align-items-center" key={item._id} style={{maxWidth: '550px'}}>
                                         <img src={item.images[0].url} alt={item.images[0].url}
@@ -103,7 +103,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                 {
                     !order.paid && auth.user.role !== 'admin' &&
                     <div className="p-4">
-                        <h2 className="mb-4 text-uppercase">Total: R${order.total}</h2>
+                        <h2 className="mb-4 text-uppercase">Total: ${order.total}</h2>
                         <PaypalBtn order={order} />
                     </div>
                 }

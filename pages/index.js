@@ -3,7 +3,9 @@ import { useState, useContext, useEffect } from 'react'
 import {DataContext} from '../store/GlobalState'
 import { getData } from '../utils/fetchData'
 import ProductItem from '../components/product/ProductItem'
+import filterSearch from '../utils/filterSearch'
 import {useRouter} from 'next/router'
+// import Filter from '../components/Filter'
 import Carousel from './Carousel'
 
 const Home = (props) => {
@@ -53,14 +55,18 @@ const Home = (props) => {
     dispatch({type: 'ADD_MODAL', payload: deleteArr})
   }
 
+  const handleLoadmore = () => {
+    setPage(page + 1)
+    filterSearch({router, page: page + 1})
+  }
 
   return(
     <div className="home_page">
       <Head>
-        <title>Home</title>
+        <title>Home Page</title>
       </Head>
-      <Carousel />
 
+      <Carousel state={state} />
       {
         auth.user && auth.user.role === 'admin' &&
         <div className="delete_all btn btn-danger mt-2" style={{marginBottom: '-10px'}}>
@@ -70,7 +76,7 @@ const Home = (props) => {
           <button className="btn btn-danger ml-2"
           data-toggle="modal" data-target="#exampleModal"
           onClick={handleDeleteAll}>
-            Deletar tudo
+            DELETE ALL
           </button>
         </div>
       }
@@ -78,7 +84,7 @@ const Home = (props) => {
       <div className="products">
         {
           products.length === 0 
-          ? <h2>Nenhum Produto</h2>
+          ? <h2>No Products</h2>
 
           : products.map(product => (
             <ProductItem key={product._id} product={product} handleCheck={handleCheck} />
@@ -90,7 +96,7 @@ const Home = (props) => {
         props.result < page * 6 ? ""
         : <button className="btn btn-outline-info d-block mx-auto mb-4"
         onClick={handleLoadmore}>
-          Carrregar mais
+          Load more
         </button>
       }
     

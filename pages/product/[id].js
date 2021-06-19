@@ -9,7 +9,7 @@ const DetailProduct = (props) => {
     const [tab, setTab] = useState(0)
 
     const { state, dispatch } = useContext(DataContext)
-    const { carrinho } = state
+    const { cart } = state
 
     const isActive = (index) => {
         if(tab === index) return " active";
@@ -19,7 +19,7 @@ const DetailProduct = (props) => {
     return(
         <div className="row detail_page">
             <Head>
-                <title>Detalhe do Produto</title>
+                <title>Detail Product</title>
             </Head>
 
             <div className="col-md-6">
@@ -41,16 +41,16 @@ const DetailProduct = (props) => {
 
             <div className="col-md-6 mt-3">
                 <h2 className="text-uppercase">{product.title}</h2>
-                <h5 className="text-danger">R${product.price}</h5>
+                <h5 className="text-danger">${product.price}</h5>
 
                 <div className="row mx-0 d-flex justify-content-between">
                     {
                         product.inStock > 0
-                        ? <h6 className="text-danger">Em estoque: {product.inStock}</h6>
-                        : <h6 className="text-danger">Fora de estoque</h6>
+                        ? <h6 className="text-danger">In Stock: {product.inStock}</h6>
+                        : <h6 className="text-danger">Out Stock</h6>
                     }
 
-                    <h6 className="text-danger">Vendido: {product.sold}</h6>
+                    <h6 className="text-danger">Sold: {product.sold}</h6>
                 </div>
 
                 <div className="my-2">{product.description}</div>
@@ -59,8 +59,8 @@ const DetailProduct = (props) => {
                 </div>
 
                 <button type="button" className="btn btn-dark d-block my-3 px-5"
-                onClick={() => dispatch(addToCart(product, carrinho))} >
-                    Comprar
+                onClick={() => dispatch(addToCart(product, cart))} >
+                    Buy
                 </button>
 
             </div>

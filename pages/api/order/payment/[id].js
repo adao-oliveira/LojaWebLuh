@@ -25,7 +25,7 @@ const paymentOrder = async(req, res) => {
                 method: 'Paypal'
             })
     
-            res.json({msg: 'Sucesso de pagamento!'})
+            res.json({msg: 'Payment success!'})
         }
         
     } catch (err) {
