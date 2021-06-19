@@ -4,6 +4,18 @@ import { useRouter } from 'next/router'
 import { DataContext } from '../store/GlobalState'
 import Cookie from 'js-cookie'
 
+function startmenu() {
+    af.style.display = "none";
+}
+
+function abrefecha() {
+    if (af.style.display == "none") {
+        af.style.display = "block";
+    }
+    else {
+        startmenu();
+    }
+}
 
 function NavBar() {
     const router = useRouter()
@@ -66,7 +78,7 @@ function NavBar() {
     }
 
     return (
-        <header className="main-header mb-48">
+        <header className="main-header mt-32">
             <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav">
                 <div className="container">
                     <div className="navbar-header">
@@ -86,6 +98,32 @@ function NavBar() {
                                 <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047756/logo_evcyld.jpg" className="logo" alt="Lu Cakes" />
                             </a>
                         </Link>
+                        <ul
+                            className="nav navbar-nav ml-auto"
+                            data-in="fadeInDown"
+                            data-out="fadeOutUp"
+                        >
+                            <li className="nav-item">
+                                <Link href="/Carrinho">
+                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/Carrinho')}>
+                                        <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
+                                            <span className="position-absolute"
+                                                style={{
+                                                    padding: '3px 6px',
+                                                    background: '#ed143dc2',
+                                                    borderRadius: '50%',
+                                                    top: '-10px',
+                                                    right: '-10px',
+                                                    color: 'white',
+                                                    fontSize: '14px'
+                                                }}>
+                                                {Carrinho.length}
+                                            </span>
+                                        </i>
+                                    </a>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                     <div className="navbar-collapse collapse" id="navbar-menu">
                         <ul
@@ -119,26 +157,6 @@ function NavBar() {
                                     <a className="nav-link">Contatos</a>
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link href="/Carrinho">
-                                    <a className={"nav-link" + isActive('/Carrinho')}>
-                                        <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
-                                            <span className="position-absolute"
-                                                style={{
-                                                    padding: '3px 6px',
-                                                    background: '#ed143dc2',
-                                                    borderRadius: '50%',
-                                                    top: '-10px',
-                                                    right: '-10px',
-                                                    color: 'white',
-                                                    fontSize: '14px'
-                                                }}>
-                                                {Carrinho.length}
-                                            </span>
-                                        </i> Carrinho
-                                    </a>
-                                </Link>
-                            </li>
                             {
                                 Object.keys(auth).length === 0
                                     ? <li className="nav-item">
@@ -150,6 +168,26 @@ function NavBar() {
                                     </li>
                                     : loggedRouter()
                             }
+                            <li className="nav-item">
+                                <Link href="/Carrinho">
+                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/Carrinho')}>
+                                        <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
+                                            <span className="position-absolute"
+                                                style={{
+                                                    padding: '3px 6px',
+                                                    background: '#ed143dc2',
+                                                    borderRadius: '50%',
+                                                    top: '-10px',
+                                                    right: '-10px',
+                                                    color: 'white',
+                                                    fontSize: '20px'
+                                                }}>
+                                                {Carrinho.length}
+                                            </span>
+                                        </i>
+                                    </a>
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

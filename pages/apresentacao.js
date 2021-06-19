@@ -25,14 +25,14 @@ const Apresentacao = () => {
                             <h2>
                                 Aproveite também para nos seguir nas redes sociais:
                                 <div className="social mt-4 my-2">
-                                <a href="#" target="_blank" class="long-share-btn facebook">
-                                    <i class="fab fa-facebook"></i>
+                                <a href="#" target="_blank" className="long-share-btn facebook">
+                                    <i className="fab fa-facebook"></i>
                                 </a>
-                                <a href="#" target="_blank" class="long-share-btn instagram">
-                                    <i class="fab fa-instagram"></i>
+                                <a href="#" target="_blank" className="long-share-btn instagram">
+                                    <i className="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://wa.me/5511991781497?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20seu%20produto." target="_blank" class="long-share-btn whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
+                                <a href="https://wa.me/5511991781497?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20seu%20produto." target="_blank" className="long-share-btn whatsapp">
+                                    <i className="fab fa-whatsapp"></i>
                                 </a>
                             </div>
                                 Um abraço.

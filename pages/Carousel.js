@@ -7,7 +7,7 @@ const Carousel = () => {
     <>
       <div>
         {/* Slide Mobile */}
-        <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-lg-none mt-28" data-ride="carousel" data-interval="2500">
+        <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-lg-none" data-ride="carousel" data-interval="2500">
           {/* <!-- indicadores --> */}
           <ol className="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
@@ -49,7 +49,7 @@ const Carousel = () => {
         {/* End Slide Mobile */}
 
         {/* Slide Desktop */}
-        <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-none d-lg-block mt-28" data-ride="carousel" data-interval="2500">
+        <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-none d-lg-block" data-ride="carousel" data-interval="2500">
           {/* <!-- indicadores --> */}
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
