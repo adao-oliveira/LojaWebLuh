@@ -16,6 +16,7 @@ class MyDocument extends Document {
                     <meta property="og:site" content="#" /> {/* website link */}
                     <meta property="og:title" content="Luh Cakes" /> {/* title shown in the actual shared post */}
                     <meta property="og:description" content="" /> {/* description shown in the actual shared post */}
+                    <meta name="description" content="Loja online de Bolos, diratamente confeitados através da Chef Lu Cakes" />
                     <meta property="og:image" content="../public/images/bgHome.webp" /> {/* image link, make sure it's jpg */}
                     <meta property="og:url" content="" /> {/* where do you want your post to link to */}
                     <meta property="og:type" content="article" />
@@ -30,7 +31,6 @@ class MyDocument extends Document {
                     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"></link>
                     <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet"></link>
                     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-                    <meta name="description" content="Dev AT E-commerce website with Next.js" />
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
                     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -40,10 +40,6 @@ class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-                    <script src="/js/jquery-3.2.1.min.js"></script>
-                    <script src="/js/popper.min.js"></script>
-                    <script src="/js/bootstrap.min.js"></script>
-                    <script src="/js/custom.js"></script>
                     <script type="text/javascript" src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
                     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
                     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>

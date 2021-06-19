@@ -16,7 +16,7 @@ const deliveredOrder = async(req, res) => {
     try {
         const result = await auth(req, res)
         if(result.role !== 'admin')
-        return res.status(400).json({err: 'Authentication is not valid.'})
+        return res.status(400).json({err: 'A autenticação não é válida'})
         const {id} = req.query
 
 
@@ -25,7 +25,7 @@ const deliveredOrder = async(req, res) => {
             await Orders.findOneAndUpdate({_id: id}, {delivered: true})
     
             res.json({
-                msg: 'Updated success!',
+                msg: 'Sucesso! atualizado',
                 result: {
                     paid: true, 
                     dateOfPayment: order.dateOfPayment, 
@@ -36,15 +36,15 @@ const deliveredOrder = async(req, res) => {
         }else{
             await Orders.findOneAndUpdate({_id: id}, {
                 paid: true, dateOfPayment: new Date().toISOString(), 
-                method: 'Receive Cash', delivered: true
+                method: 'Receber dinheiro', delivered: true
             })
     
             res.json({
-                msg: 'Updated success!',
+                msg: 'Sucesso! atualizado',
                 result: {
                     paid: true, 
                     dateOfPayment: new Date().toISOString(), 
-                    method: 'Receive Cash', 
+                    method: 'Receber dinheiro', 
                     delivered: true
                 }
             })

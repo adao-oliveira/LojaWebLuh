@@ -11,10 +11,10 @@ export default async (req, res) => {
         if(!rf_token) return res.status(400).json({err: 'Por favor, faça o login agora!'})
 
         const result = jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET)
-        if(!result) return res.status(400).json({err: 'Seu token está incorreto ou expirou.'})
+        if(!result) return res.status(400).json({err: 'Seu token está incorreto ou expirou'})
 
         const user = await Users.findById(result.id)
-        if(!user) return res.status(400).json({err: 'Usuário não existe.'})
+        if(!user) return res.status(400).json({err: 'Usuário não existe'})
 
         const access_token = createAccessToken({id: user._id})
         res.json({

@@ -19,7 +19,7 @@ const login = async (req, res) => {
         const { email, password } = req.body
 
         const user = await Users.findOne({ email })
-        if(!user) return res.status(400).json({err: 'Esse usuário não existe.'})
+        if(!user) return res.status(400).json({err: 'Esse usuário não existe'})
 
         const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch) return res.status(400).json({err: 'Senha incorreta'})
@@ -28,7 +28,7 @@ const login = async (req, res) => {
         const refresh_token = createRefreshToken({id: user._id})
         
         res.json({
-            msg: "Sucesso de Login!",
+            msg: "Login realizado com Sucesso!",
             refresh_token,
             access_token,
             user: {

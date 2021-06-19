@@ -3,7 +3,6 @@ import { useState, useContext, useEffect } from 'react'
 import {DataContext} from '../store/GlobalState'
 import { getData } from '../utils/fetchData'
 import ProductItem from '../components/product/ProductItem'
-import filterSearch from '../utils/filterSearch'
 import {useRouter} from 'next/router'
 import Carousel from './Carousel'
 
@@ -54,10 +53,6 @@ const Home = (props) => {
     dispatch({type: 'ADD_MODAL', payload: deleteArr})
   }
 
-  const handleLoadmore = () => {
-    setPage(page + 1)
-    filterSearch({router, page: page + 1})
-  }
 
   return(
     <div className="home_page">

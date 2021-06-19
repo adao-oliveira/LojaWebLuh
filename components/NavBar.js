@@ -4,18 +4,6 @@ import { useRouter } from 'next/router'
 import { DataContext } from '../store/GlobalState'
 import Cookie from 'js-cookie'
 
-function startmenu() {
-    af.style.display = "none";
-}
-
-function abrefecha() {
-    if (af.style.display == "none") {
-        af.style.display = "block";
-    }
-    else {
-        startmenu();
-    }
-}
 
 function NavBar() {
     const router = useRouter()
@@ -48,9 +36,6 @@ function NavBar() {
                 <Link href="/create">
                     <a className="dropdown-item">Produtos</a>
                 </Link>
-                <Link href="/categories">
-                    <a className="dropdown-item">Categorias</a>
-                </Link>
             </>
         )
     }
@@ -81,8 +66,8 @@ function NavBar() {
     }
 
     return (
-        <header className="main-header">
-            <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav mb-48">
+        <header className="main-header mb-48">
+            <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav">
                 <div className="container">
                     <div className="navbar-header">
                         <button
