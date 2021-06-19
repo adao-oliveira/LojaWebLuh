@@ -9,11 +9,11 @@ const Carousel = () => {
         {/* Slide Mobile */}
         <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-lg-none" data-ride="carousel" data-interval="2500">
           {/* <!-- indicadores --> */}
-          <ol className="carousel-indicators">
+          {/* <ol className="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
+          </ol> */}
           {/* Slider */}
           <div className="carousel-inner" role="listbox">
             <div className="carousel-item active">

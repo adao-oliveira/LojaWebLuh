@@ -114,18 +114,18 @@ const Cart = () => {
           </table>
         </div>
 
-        <div className="col-md-4 my-3 text-right text-uppercase text-secondary">
+        <div className="col-md-4 my-3 text-center text-uppercase text-secondary">
             <form>
               <h2>Shopping</h2>
 
-              <label htmlFor="address">Endereço</label>
+              <label htmlFor="address"></label>
               <input type="text" name="address" id="address"
-              className="form-control mb-2" value={address}
+              className="form-control mb-2" value={address} placeholder="Endereço"
               onChange={e => setAddress(e.target.value)} />
 
-              <label htmlFor="mobile">Telefone</label>
+              <label htmlFor="mobile"></label>
               <input type="text" name="mobile" id="mobile"
-              className="form-control mb-2" value={mobile}
+              className="form-control mb-2" value={mobile} placeholder="Telefone"
               onChange={e => setMobile(e.target.value)} />
             </form>
 

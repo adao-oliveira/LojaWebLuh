@@ -81,7 +81,7 @@ function NavBar() {
     }
 
     return (
-        <header className="main-header mt-48">
+        <header className="main-header mt-32">
             <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav">
                 <div className="container">
                     <div className="navbar-header">
