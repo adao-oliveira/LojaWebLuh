@@ -1,3 +1,3 @@
-* NEXTJS - Ecommerce *
+# NEXTJS - Ecommerce
 
-### Author: Adão Oliveira ###
+## Author: Adão Oliveira
