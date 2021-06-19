@@ -5,9 +5,7 @@ const orderSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'user'
     },
-    address: String,
-    mobile: String,
-    cart: Array,
+    Carrinho: Array,
     total: Number,
     paymentId: String,
     method: String,

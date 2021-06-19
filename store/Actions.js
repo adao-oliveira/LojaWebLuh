@@ -8,17 +8,17 @@ export const ACTIONS = {
     ADD_CATEGORIES: 'ADD_CATEGORIES',
 }
 
-export const addToCart = (product, cart) => {
+export const addToCart = (product, Carrinho) => {
     if(product.inStock === 0)
-    return ({ type: 'NOTIFY', payload: {error: 'This product is out of stock.'} }) 
+    return ({ type: 'NOTIFY', payload: {error: 'Este produto está fora de estoque.'} }) 
 
-    const check = cart.every(item => {
+    const check = Carrinho.every(item => {
         return item._id !== product._id
     })
 
-    if(!check) return ({ type: 'NOTIFY', payload: {error: 'The product has been added to cart.'} }) 
+    if(!check) return ({ type: 'NOTIFY', payload: {error: 'O produto já consta adicionado no carrinho'} }) 
 
-    return ({ type: 'ADD_CART', payload: [...cart, {...product, quantity: 1}] }) 
+    return ({ type: 'ADD_CART', payload: [...Carrinho, {...product, quantity: 1}] }) 
 }
 
 export const decrease = (data, id) => {

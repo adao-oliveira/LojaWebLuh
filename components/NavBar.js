@@ -6,21 +6,21 @@ import Cookie from 'js-cookie'
 
 function startmenu() {
     af.style.display = "none";
-  }
-  
-  function abrefecha() {
+}
+
+function abrefecha() {
     if (af.style.display == "none") {
-      af.style.display = "block";
+        af.style.display = "block";
     }
     else {
-      startmenu();
+        startmenu();
     }
-  }
+}
 
 function NavBar() {
     const router = useRouter()
     const { state, dispatch } = useContext(DataContext)
-    const { auth, cart } = state
+    const { auth, Carrinho } = state
 
 
     const isActive = (r) => {
@@ -82,7 +82,7 @@ function NavBar() {
 
     return (
         <header className="main-header">
-            <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav">
+            <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav mb-48">
                 <div className="container">
                     <div className="navbar-header">
                         <button
@@ -135,8 +135,8 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/cart">
-                                    <a className={"nav-link" + isActive('/cart')}>
+                                <Link href="/Carrinho">
+                                    <a className={"nav-link" + isActive('/Carrinho')}>
                                         <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
                                             <span className="position-absolute"
                                                 style={{
@@ -148,7 +148,7 @@ function NavBar() {
                                                     color: 'white',
                                                     fontSize: '14px'
                                                 }}>
-                                                {cart.length}
+                                                {Carrinho.length}
                                             </span>
                                         </i> Carrinho
                                     </a>

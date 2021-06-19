@@ -7,29 +7,26 @@ import { getData, postData } from '../utils/fetchData'
 import { useRouter } from 'next/router'
 
 
-const Cart = () => {
+const Carrinho = () => {
   const { state, dispatch } = useContext(DataContext)
-  const { cart, auth, orders } = state
+  const { Carrinho, auth, orders } = state
 
   const [total, setTotal] = useState(0)
-
-  const [address, setAddress] = useState('')
-  const [mobile, setMobile] = useState('')
 
   const [callback, setCallback] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
     const getTotal = () => {
-      const res = cart.reduce((prev, item) => {
-        return prev + (item.price * item.quantity)
+      const res = Carrinho.reduce((prev, item) => {
+        return prev + (item.price *  item.quantity)
       },0)
 
       setTotal(res)
     }
 
     getTotal()
-  },[cart])
+  },[Carrinho])
 
   useEffect(() => {
     const cartLocal = JSON.parse(localStorage.getItem('__next__cart01__devat'))
@@ -59,7 +56,7 @@ const Cart = () => {
     return dispatch({ type: 'NOTIFY', payload: {error: 'Please add your address and mobile.'}})
 
     let newCart = [];
-    for(const item of cart){
+    for(const item of Carrinho){
       const res = await getData(`product/${item._id}`)
       if(res.product.inStock - item.quantity >= 0){
         newCart.push(item)
@@ -75,7 +72,7 @@ const Cart = () => {
 
     dispatch({ type: 'NOTIFY', payload: {loading: true} })
 
-    postData('order', {address, mobile, cart, total}, auth.token)
+    postData('order', {address, mobile, Carrinho, total}, auth.token)
     .then(res => {
       if(res.err) return dispatch({ type: 'NOTIFY', payload: {error: res.err} })
 
@@ -92,13 +89,13 @@ const Cart = () => {
 
   }
   
-  if( cart.length === 0 ) 
+  if( Carrinho.length === 0 ) 
     return <img className="img-responsive w-100" src="/empty_cart.jpg" alt="not empty"/>
 
     return(
-      <div className="row mx-auto">
+      <div className="row mx-auto mt-48">
         <Head>
-          <title>Pagina do Carrinho</title>
+          <title>Carrinho</title>
         </Head>
 
         <div className="col-md-8 text-secondary table-responsive my-3">
@@ -107,8 +104,8 @@ const Cart = () => {
           <table className="table my-3">
             <tbody>
               {
-                cart.map(item => (
-                  <CartItem key={item._id} item={item} dispatch={dispatch} cart={cart} />
+                Carrinho.map(item => (
+                  <CartItem key={item._id} item={item} dispatch={dispatch} Carrinho={Carrinho} />
                 ))
               }
             </tbody>
@@ -116,25 +113,12 @@ const Cart = () => {
         </div>
 
         <div className="col-md-4 my-3 text-right text-uppercase text-secondary">
-            <form>
-              <h2>Shopping</h2>
-
-              <label htmlFor="address">Address</label>
-              <input type="text" name="address" id="address"
-              className="form-control mb-2" value={address}
-              onChange={e => setAddress(e.target.value)} />
-
-              <label htmlFor="mobile">Mobile</label>
-              <input type="text" name="mobile" id="mobile"
-              className="form-control mb-2" value={mobile}
-              onChange={e => setMobile(e.target.value)} />
-            </form>
 
             <h3>Total: <span className="text-danger">${total}</span></h3>
 
             
             <Link href={auth.user ? '#!' : '/signin'}>
-              <a className="btn btn-dark my-2" onClick={handlePayment}>Proceed with payment</a>
+              <a className="btn btn-success my-2" onClick={handlePayment}>Pagamento</a>
             </Link>
             
         </div>
@@ -142,4 +126,4 @@ const Cart = () => {
     )
   }
   
-export default Cart
+export default Carrinho

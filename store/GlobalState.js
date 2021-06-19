@@ -8,11 +8,11 @@ export const DataContext = createContext()
 
 export const DataProvider = ({children}) => {
     const initialState = { 
-        notify: {}, auth: {}, cart: [], modal: [], orders: [], users: [], categories: []
+        notify: {}, auth: {}, Carrinho: [], modal: [], orders: [], users: [], categories: []
     }
 
     const [state, dispatch] = useReducer(reducers, initialState)
-    const { cart, auth } = state
+    const { Carrinho, auth } = state
 
     useEffect(() => {
         const firstLogin = localStorage.getItem("firstLogin");
@@ -47,8 +47,8 @@ export const DataProvider = ({children}) => {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('__next__cart01__devat', JSON.stringify(cart))
-    }, [cart])
+        localStorage.setItem('__next__cart01__devat', JSON.stringify(Carrinho))
+    }, [Carrinho])
 
     useEffect(() => {
         if(auth.token){

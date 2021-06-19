@@ -11,7 +11,7 @@ const paypalBtn = ({order}) => {
     useEffect(() => {
         paypal.Buttons({
             createOrder: function(data, actions) {
-              // This function sets up the details of the transaction, including the amount and line item details.
+              // Esta função configura os detalhes da transação, incluindo o valor e os detalhes do item de linha.
               return actions.order.create({
                 purchase_units: [{
                   amount: {
@@ -21,7 +21,7 @@ const paypalBtn = ({order}) => {
               });
             },
             onApprove: function(data, actions) {
-              // This function captures the funds from the transaction.
+              // Esta função captura os fundos da transação.
               dispatch({ type: 'NOTIFY', payload: {loading: true} })
 
               return actions.order.capture().then(function(details) {
@@ -40,7 +40,7 @@ const paypalBtn = ({order}) => {
 
                   return dispatch({ type: 'NOTIFY', payload: {success: res.msg} })
                 })
-                // This function shows a transaction success message to your buyer.
+                // Esta função mostra uma mensagem de sucesso da transação ao seu comprador.
               });
             }
         }).render(refPaypalBtn.current);

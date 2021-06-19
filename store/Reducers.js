@@ -16,7 +16,7 @@ const reducers = (state, action) => {
         case ACTIONS.ADD_CART:
             return {
                 ...state,
-                cart: action.payload
+                Carrinho: action.payload
             };
         case ACTIONS.ADD_MODAL:
             return {

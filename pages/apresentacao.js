@@ -4,7 +4,7 @@ const Apresentacao = () => {
 
     return (
         <>
-            <div className="about-box-main mt-32">
+            <div className="about-box-main mt-48">
                 <div className="container">
                     <div className="row text-center">
                         <div className="col-lg-12">

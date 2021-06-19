@@ -36,20 +36,20 @@ const getOrders = async (req, res) => {
 const createOrder = async (req, res) => {
     try {
         const result = await auth(req, res)
-        const { address, mobile, cart, total } = req.body
+        const { address, mobile, Carrinho, total } = req.body
 
         const newOrder = new Orders({
-            user: result.id, address, mobile, cart, total
+            user: result.id, address, mobile, Carrinho, total
         })
 
-        cart.filter(item => {
+        Carrinho.filter(item => {
             return sold(item._id, item.quantity, item.inStock, item.sold)
         })
 
         await newOrder.save()
 
         res.json({
-            msg: 'Order success! We will contact you to confirm the order.',
+            msg: 'Sucesso no pedido! Entraremos em contato para confirmar o pedido.',
             newOrder
         })
 
