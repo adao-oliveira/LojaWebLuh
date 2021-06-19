@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 const Carrinho = () => {
   const { state, dispatch } = useContext(DataContext)
-  const { Carrinho, auth, orders } = state
+  const { carrinho, auth, orders } = state
 
   const [total, setTotal] = useState(0)
 
@@ -18,7 +18,7 @@ const Carrinho = () => {
 
   useEffect(() => {
     const getTotal = () => {
-      const res = Carrinho.reduce((prev, item) => {
+      const res = carrinho.reduce((prev, item) => {
         return prev + (item.price *  item.quantity)
       },0)
 
@@ -26,7 +26,7 @@ const Carrinho = () => {
     }
 
     getTotal()
-  },[Carrinho])
+  },[carrinho])
 
   useEffect(() => {
     const cartLocal = JSON.parse(localStorage.getItem('__next__cart01__devat'))
@@ -56,14 +56,14 @@ const Carrinho = () => {
     return dispatch({ type: 'NOTIFY', payload: {error: 'Please add your address and mobile.'}})
 
     let newCart = [];
-    for(const item of Carrinho){
+    for(const item of carrinho){
       const res = await getData(`product/${item._id}`)
       if(res.product.inStock - item.quantity >= 0){
         newCart.push(item)
       }
     }
     
-    if(newCart.length < cart.length){
+    if(newCart.length < carrinho.length){
       setCallback(!callback)
       return dispatch({ type: 'NOTIFY', payload: {
         error: 'The product is out of stock or the quantity is insufficient.'
@@ -72,7 +72,7 @@ const Carrinho = () => {
 
     dispatch({ type: 'NOTIFY', payload: {loading: true} })
 
-    postData('order', {address, mobile, Carrinho, total}, auth.token)
+    postData('order', {address, mobile, carrinho, total}, auth.token)
     .then(res => {
       if(res.err) return dispatch({ type: 'NOTIFY', payload: {error: res.err} })
 
@@ -89,8 +89,8 @@ const Carrinho = () => {
 
   }
   
-  if( Carrinho.length === 0 ) 
-    return <img className="img-responsive w-100" src="/empty_cart.jpg" alt="not empty"/>
+  if( carrinho.length === 0 ) 
+    return <img className="img-responsive w-100" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624114292/cart.png" alt="Carrinho vazio"/>
 
     return(
       <div className="row mx-auto mt-48">
@@ -104,8 +104,8 @@ const Carrinho = () => {
           <table className="table my-3">
             <tbody>
               {
-                Carrinho.map(item => (
-                  <CartItem key={item._id} item={item} dispatch={dispatch} Carrinho={Carrinho} />
+                carrinho.map(item => (
+                  <CartItem key={item._id} item={item} dispatch={dispatch} carrinho={carrinho} />
                 ))
               }
             </tbody>

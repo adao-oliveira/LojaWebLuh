@@ -9,7 +9,7 @@ const DetailProduct = (props) => {
     const [tab, setTab] = useState(0)
 
     const { state, dispatch } = useContext(DataContext)
-    const { Carrinho } = state
+    const { carrinho } = state
 
     const isActive = (index) => {
         if(tab === index) return " active";
@@ -22,7 +22,7 @@ const DetailProduct = (props) => {
                 <title>Detalhe do Produto</title>
             </Head>
 
-            <div className="col-md-6  mt-48">
+            <div className="col-md-6">
                 <img src={ product.images[tab].url } alt={ product.images[tab].url }
                 className="d-block img-thumbnail rounded mt-4 w-100"
                 style={{height: '350px'}} />
@@ -59,7 +59,7 @@ const DetailProduct = (props) => {
                 </div>
 
                 <button type="button" className="btn btn-dark d-block my-3 px-5"
-                onClick={() => dispatch(addToCart(product, Carrinho))} >
+                onClick={() => dispatch(addToCart(product, carrinho))} >
                     Comprar
                 </button>
 

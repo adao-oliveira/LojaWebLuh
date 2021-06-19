@@ -51,8 +51,8 @@ const Carousel = () => {
         {/* Slide Desktop */}
         <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-none d-lg-block" data-ride="carousel" data-interval="2500">
           {/* <!-- indicadores --> */}
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <ol className="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
@@ -88,8 +88,6 @@ const Carousel = () => {
           </a>
         </div>
         {/* End Slide Desktop */}
-
-        {/* Produtos */}
       </div>
     </>
   );

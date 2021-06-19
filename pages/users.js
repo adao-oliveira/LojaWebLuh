@@ -14,7 +14,7 @@ const Users = () => {
                 <title>Users</title>
             </Head>
 
-            <table className="table w-100">
+            <table className="table w-100 mt-48">
                 <thead>
                     <tr>
                         <th></th>

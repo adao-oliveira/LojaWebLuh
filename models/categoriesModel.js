@@ -10,5 +10,5 @@ const CategoriesSchema = new mongoose.Schema({
     timestamps: true
 })
 
-let Dataset = mongoose.models.categories || mongoose.model('Categoria', CategoriesSchema)
+let Dataset = mongoose.models.categories || mongoose.model('categories', CategoriesSchema)
 export default Dataset

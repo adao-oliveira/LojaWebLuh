@@ -5,7 +5,7 @@ import { addToCart } from '../../store/Actions'
 
 const ProductItem = ({ product, handleCheck }) => {
     const { state, dispatch } = useContext(DataContext)
-    const { Carrinho, auth } = state
+    const { carrinho, auth } = state
 
     const userLink = () => {
         return (
@@ -17,7 +17,7 @@ const ProductItem = ({ product, handleCheck }) => {
                 <button className="btn btn-success"
                     style={{ marginLeft: '5px', flex: 1 }}
                     disabled={product.inStock === 0 ? true : false}
-                    onClick={() => dispatch(addToCart(product, Carrinho))} >
+                    onClick={() => dispatch(addToCart(product, carrinho))} >
                     Comprar
                 </button>
             </>

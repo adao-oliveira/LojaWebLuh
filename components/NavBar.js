@@ -20,7 +20,7 @@ function abrefecha() {
 function NavBar() {
     const router = useRouter()
     const { state, dispatch } = useContext(DataContext)
-    const { auth, Carrinho } = state
+    const { auth, carrinho } = state
 
 
     const isActive = (r) => {
@@ -47,6 +47,9 @@ function NavBar() {
                 </Link>
                 <Link href="/create">
                     <a className="dropdown-item">Produtos</a>
+                </Link>
+                <Link href="/categories">
+                    <a className="dropdown-item">Categories</a>
                 </Link>
             </>
         )
@@ -104,8 +107,8 @@ function NavBar() {
                             data-out="fadeOutUp"
                         >
                             <li className="nav-item">
-                                <Link href="/Carrinho">
-                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/Carrinho')}>
+                                <Link href="/carrinho">
+                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/carrinho')}>
                                         <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
                                             <span className="position-absolute"
                                                 style={{
@@ -117,7 +120,7 @@ function NavBar() {
                                                     color: 'white',
                                                     fontSize: '14px'
                                                 }}>
-                                                {Carrinho.length}
+                                                {carrinho.length}
                                             </span>
                                         </i>
                                     </a>
@@ -157,6 +160,26 @@ function NavBar() {
                                     <a className="nav-link">Contatos</a>
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link href="/carrinho">
+                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/carrinho')}>
+                                        <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
+                                            <span className="position-absolute"
+                                                style={{
+                                                    padding: '3px 6px',
+                                                    background: '#ed143dc2',
+                                                    borderRadius: '50%',
+                                                    top: '-10px',
+                                                    right: '-10px',
+                                                    color: 'white',
+                                                    fontSize: '14px'
+                                                }}>
+                                                {carrinho.length}
+                                            </span>
+                                        </i>
+                                    </a>
+                                </Link>
+                            </li>
                             {
                                 Object.keys(auth).length === 0
                                     ? <li className="nav-item">
@@ -168,26 +191,6 @@ function NavBar() {
                                     </li>
                                     : loggedRouter()
                             }
-                            <li className="nav-item">
-                                <Link href="/Carrinho">
-                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/Carrinho')}>
-                                        <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
-                                            <span className="position-absolute"
-                                                style={{
-                                                    padding: '3px 6px',
-                                                    background: '#ed143dc2',
-                                                    borderRadius: '50%',
-                                                    top: '-10px',
-                                                    right: '-10px',
-                                                    color: 'white',
-                                                    fontSize: '20px'
-                                                }}>
-                                                {Carrinho.length}
-                                            </span>
-                                        </i>
-                                    </a>
-                                </Link>
-                            </li>
                         </ul>
                     </div>
                 </div>
