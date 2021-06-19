@@ -54,14 +54,14 @@ const ProductsManager = () => {
         const files = [...e.target.files]
 
         if(files.length === 0) 
-        return dispatch({type: 'NOTIFY', payload: {error: 'Files does not exist.'}})
+        return dispatch({type: 'NOTIFY', payload: {error: 'Arquivos não existem'}})
 
         files.forEach(file => {
             if(file.size > 1024 * 1024)
-            return err = 'The largest image size is 1mb'
+            return err = 'O maior tamanho de imagem é 1mb'
 
             if(file.type !== 'image/jpeg' && file.type !== 'image/png')
-            return err = 'Image format is incorrect.'
+            return err = 'O formato da imagem está incorreto'
 
             num += 1;
             if(num <= 5) newImages.push(file)
@@ -72,7 +72,7 @@ const ProductsManager = () => {
 
         const imgCount = images.length
         if(imgCount + newImages.length > 5)
-        return dispatch({type: 'NOTIFY', payload: {error: 'Select up to 5 images.'}})
+        return dispatch({type: 'NOTIFY', payload: {error: 'Selecione até 5 imagens'}})
         setImages([...images, ...newImages])
     }
 
@@ -85,10 +85,10 @@ const ProductsManager = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         if(auth.user.role !== 'admin') 
-        return dispatch({type: 'NOTIFY', payload: {error: 'Authentication is not valid.'}})
+        return dispatch({type: 'NOTIFY', payload: {error: 'A autenticação não é válida'}})
 
         if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
-        return dispatch({type: 'NOTIFY', payload: {error: 'Please add all the fields.'}})
+        return dispatch({type: 'NOTIFY', payload: {error: 'Por favor, adicione todos os campos'}})
 
     
         dispatch({type: 'NOTIFY', payload: {loading: true}})
@@ -114,7 +114,7 @@ const ProductsManager = () => {
     return(
         <div className="products_manager">
             <Head>
-                <title>Products Manager</title>
+                <title>Produtos</title>
             </Head>
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
@@ -125,14 +125,14 @@ const ProductsManager = () => {
 
                     <div className="row">
                         <div className="col-sm-6">
-                            <label htmlFor="price">Price</label>
+                            <label htmlFor="price">Preço</label>
                             <input type="number" name="price" value={price}
                             placeholder="Price" className="d-block w-100 p-2"
                             onChange={handleChangeInput} />
                         </div>
 
                         <div className="col-sm-6">
-                            <label htmlFor="price">In Stock</label>
+                            <label htmlFor="price">Em estoque</label>
                             <input type="number" name="inStock" value={inStock}
                             placeholder="inStock" className="d-block w-100 p-2"
                             onChange={handleChangeInput} />
@@ -150,7 +150,7 @@ const ProductsManager = () => {
                     <div className="input-group-prepend px-0 my-2">
                         <select name="category" id="category" value={category}
                         onChange={handleChangeInput} className="custom-select text-capitalize">
-                            <option value="all">All Products</option>
+                            <option value="all">Todos os produtos</option>
                             {
                                 categories.map(item => (
                                     <option key={item._id} value={item._id}>

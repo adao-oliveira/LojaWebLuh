@@ -75,12 +75,12 @@ const getProducts = async (req, res) => {
 const createProduct = async (req, res) => {
     try {
         const result = await auth(req, res)
-        if(result.role !== 'admin') return res.status(400).json({err: 'Authentication is not valid.'})
+        if(result.role !== 'admin') return res.status(400).json({err: 'A autenticação não é válida'})
 
         const {title, price, inStock, description, content, category, images} = req.body
 
         if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
-        return res.status(400).json({err: 'Please add all the fields.'})
+        return res.status(400).json({err: 'Por favor, adicione todos os campos'})
 
 
         const newProduct = new Products({
@@ -89,7 +89,7 @@ const createProduct = async (req, res) => {
 
         await newProduct.save()
 
-        res.json({msg: 'Success! Created a new product'})
+        res.json({msg: 'Sucesso! Criou um novo produto'})
 
     } catch (err) {
         return res.status(500).json({err: err.message})

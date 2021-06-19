@@ -19,7 +19,7 @@ const DetailProduct = (props) => {
     return(
         <div className="row detail_page">
             <Head>
-                <title>Detail Product</title>
+                <title>Detalhes do Produto</title>
             </Head>
 
             <div className="col-md-6">
@@ -46,11 +46,11 @@ const DetailProduct = (props) => {
                 <div className="row mx-0 d-flex justify-content-between">
                     {
                         product.inStock > 0
-                        ? <h6 className="text-danger">In Stock: {product.inStock}</h6>
-                        : <h6 className="text-danger">Out Stock</h6>
+                        ? <h6 className="text-danger">Em estoque: {product.inStock}</h6>
+                        : <h6 className="text-danger">Fora de estoque</h6>
                     }
 
-                    <h6 className="text-danger">Sold: {product.sold}</h6>
+                    <h6 className="text-danger">Vendido: {product.sold}</h6>
                 </div>
 
                 <div className="my-2">{product.description}</div>
@@ -60,7 +60,7 @@ const DetailProduct = (props) => {
 
                 <button type="button" className="btn btn-dark d-block my-3 px-5"
                 onClick={() => dispatch(addToCart(product, cart))} >
-                    Buy
+                    Comprar
                 </button>
 
             </div>

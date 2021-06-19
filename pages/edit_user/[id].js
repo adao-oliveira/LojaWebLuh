@@ -53,25 +53,25 @@ const EditUser = () => {
     return (
         <div className="edit_user my-3">
             <Head>
-                <title>Edit User</title>
+                <title>Editar usuário</title>
             </Head>
 
             <div>
                 <button className="btn btn-dark" onClick={() => router.back()}>
-                    <i className="fas fa-long-arrow-alt-left" aria-hidden></i> Go Back
+                    <i className="fas fa-long-arrow-alt-left" aria-hidden></i> Voltar
                 </button>
             </div>
 
             <div className="col-md-4 mx-auto my-4">
-                <h2 className="text-uppercase text-secondary">Edit User</h2>
+                <h2 className="text-uppercase text-secondary">Editar usuário</h2>
 
                 <div className="form-group">
-                    <label htmlFor="name" className="d-block">Name</label>
+                    <label htmlFor="name" className="d-block">Nome</label>
                     <input type="text" id="name" defaultValue={editUser.name} disabled />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="email" className="d-block">Email</label>
+                    <label htmlFor="email" className="d-block">E-mail</label>
                     <input type="text" id="email" defaultValue={editUser.email} disabled />
                 </div>
 
@@ -84,7 +84,7 @@ const EditUser = () => {
                     </label>
                 </div>
 
-                <button className="btn btn-dark" onClick={handleSubmit}>Update</button>
+                <button className="btn btn-dark" onClick={handleSubmit}>Atualizar</button>
 
             </div>
 

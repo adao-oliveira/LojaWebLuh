@@ -25,7 +25,7 @@ const deliveredOrder = async(req, res) => {
             await Orders.findOneAndUpdate({_id: id}, {delivered: true})
     
             res.json({
-                msg: 'Updated success!',
+                msg: 'Atualizado com sucesso!',
                 result: {
                     paid: true, 
                     dateOfPayment: order.dateOfPayment, 
@@ -40,7 +40,7 @@ const deliveredOrder = async(req, res) => {
             })
     
             res.json({
-                msg: 'Updated success!',
+                msg: 'Atualizado com sucesso!',
                 result: {
                     paid: true, 
                     dateOfPayment: new Date().toISOString(), 

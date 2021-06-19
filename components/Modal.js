@@ -72,11 +72,11 @@ const Modal = () => {
                     </button>
                 </div>
                 <div className="modal-body">
-                    Do you want to delete this item?
+                    Você quer apagar este item?
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={handleSubmit}>Yes</button>
-                    <button type="button" className="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={handleSubmit}>Confirmar</button>
+                    <button type="button" className="btn btn-primary" data-dismiss="modal">Cancelar</button>
                 </div>
                 </div>
             </div>

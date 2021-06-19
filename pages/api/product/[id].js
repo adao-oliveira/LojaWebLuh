@@ -23,7 +23,7 @@ const getProduct = async (req, res) => {
         const { id } = req.query;
 
         const product = await Products.findById(id)
-        if(!product) return res.status(400).json({err: 'This product does not exist.'})
+        if(!product) return res.status(400).json({err: 'Este produto não existe'})
         
         res.json({ product })
 
@@ -36,19 +36,19 @@ const updateProduct = async (req, res) => {
     try {
         const result = await auth(req, res)
         if(result.role !== 'admin') 
-        return res.status(400).json({err: 'Authentication is not valid.'})
+        return res.status(400).json({err: 'A autenticação não é válida'})
 
         const {id} = req.query
         const {title, price, inStock, description, content, category, images} = req.body
 
         if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
-        return res.status(400).json({err: 'Please add all the fields.'})
+        return res.status(400).json({err: 'Por favor, adicione todos os campos'})
 
         await Products.findOneAndUpdate({_id: id}, {
             title: title.toLowerCase(), price, inStock, description, content, category, images
         })
 
-        res.json({msg: 'Success! Updated a product'})
+        res.json({msg: 'Produto atualizado com sucesso!'})
     } catch (err) {
         return res.status(500).json({err: err.message})
     }
@@ -59,12 +59,12 @@ const deleteProduct = async(req, res) => {
         const result = await auth(req, res)
         
         if(result.role !== 'admin') 
-        return res.status(400).json({err: 'Authentication is not valid.'})
+        return res.status(400).json({err: 'A autenticação não é válida'})
 
         const {id} = req.query
 
         await Products.findByIdAndDelete(id)
-        res.json({msg: 'Deleted a product.'})
+        res.json({msg: 'Produto deletado'})
 
     } catch (err) {
         return res.status(500).json({err: err.message})

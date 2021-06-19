@@ -20,10 +20,10 @@ const Users = () => {
                         <th></th>
                         <th>ID</th>
                         <th>Avatar</th>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
                         <th>Admin</th>
-                        <th>Action</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
 

@@ -56,7 +56,7 @@ const Cart = () => {
 
   const handlePayment = async () => {
     if(!address || !mobile)
-    return dispatch({ type: 'NOTIFY', payload: {error: 'Please add your address and mobile.'}})
+    return dispatch({ type: 'NOTIFY', payload: {error: 'Por favor, adicione seu endereço e celular'}})
 
     let newCart = [];
     for(const item of cart){
@@ -69,7 +69,7 @@ const Cart = () => {
     if(newCart.length < cart.length){
       setCallback(!callback)
       return dispatch({ type: 'NOTIFY', payload: {
-        error: 'The product is out of stock or the quantity is insufficient.'
+        error: 'O produto está fora de estoque ou a quantidade é insuficiente'
       }})
     }
 
@@ -129,7 +129,7 @@ const Cart = () => {
               onChange={e => setMobile(e.target.value)} />
             </form>
 
-            <h3>Total: <span className="text-danger">${total}</span></h3>
+            <h3>Total: <span className="text-danger">R${total}</span></h3>
 
             
             <Link href={auth.user ? '#!' : '/signin'}>

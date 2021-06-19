@@ -46,7 +46,7 @@ const Home = (props) => {
           deleteArr.push({
             data: '', 
             id: product._id, 
-            title: 'Delete all selected products?', 
+            title: 'Excluir todos os produtos selecionados?', 
             type: 'DELETE_PRODUCT'
           })
       }
