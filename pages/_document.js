@@ -44,7 +44,7 @@ class MyDocument extends Document {
                     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
                     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-                    <div class="whatsapp-fixo">
+                    <div className="whatsapp-fixo">
                         <a href="https://wa.me/5511991781497?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20seu%20produto.">
                             <img src="https://webofinfo.com/wp-content/uploads/2018/04/WhatsApp-Under2B16-webofinfo.png" width="60px" height="60px" alt="Que tal fazermos um orçamento?" />
                         </a>

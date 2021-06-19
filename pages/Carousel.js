@@ -9,8 +9,8 @@ const Carousel = () => {
         {/* Slide Mobile */}
         <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-lg-none mt-28" data-ride="carousel" data-interval="2500">
           {/* <!-- indicadores --> */}
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <ol className="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
