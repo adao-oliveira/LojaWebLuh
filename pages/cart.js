@@ -23,24 +23,24 @@ const Cart = () => {
     const getTotal = () => {
       const res = cart.reduce((prev, item) => {
         return prev + (item.price * item.quantity)
-      },0)
+      }, 0)
 
       setTotal(res)
     }
 
     getTotal()
-  },[cart])
+  }, [cart])
 
   useEffect(() => {
     const cartLocal = JSON.parse(localStorage.getItem('__next__cart01__devat'))
-    if(cartLocal && cartLocal.length > 0){
+    if (cartLocal && cartLocal.length > 0) {
       let newArr = []
       const updateCart = async () => {
-        for (const item of cartLocal){
+        for (const item of cartLocal) {
           const res = await getData(`product/${item._id}`)
           const { _id, title, images, price, inStock, sold } = res.product
-          if(inStock > 0){
-            newArr.push({ 
+          if (inStock > 0) {
+            newArr.push({
               _id, title, images, price, inStock, sold,
               quantity: item.quantity > inStock ? 1 : item.quantity
             })
@@ -51,94 +51,92 @@ const Cart = () => {
       }
 
       updateCart()
-    } 
-  },[callback])
+    }
+  }, [callback])
 
   const handlePayment = async () => {
-    if(!address || !mobile)
-    return dispatch({ type: 'NOTIFY', payload: {error: 'Por favor, adicione seu endereço e celular'}})
+    if (!address || !mobile)
+      return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione seu endereço e celular' } })
 
     let newCart = [];
-    for(const item of cart){
+    for (const item of cart) {
       const res = await getData(`product/${item._id}`)
-      if(res.product.inStock - item.quantity >= 0){
+      if (res.product.inStock - item.quantity >= 0) {
         newCart.push(item)
       }
     }
-    
-    if(newCart.length < cart.length){
+
+    if (newCart.length < cart.length) {
       setCallback(!callback)
-      return dispatch({ type: 'NOTIFY', payload: {
-        error: 'O produto está fora de estoque ou a quantidade é insuficiente'
-      }})
+      return dispatch({
+        type: 'NOTIFY', payload: {
+          error: 'O produto está fora de estoque ou a quantidade é insuficiente'
+        }
+      })
     }
 
-    dispatch({ type: 'NOTIFY', payload: {loading: true} })
+    dispatch({ type: 'NOTIFY', payload: { loading: true } })
 
-    postData('order', {address, mobile, cart, total}, auth.token)
-    .then(res => {
-      if(res.err) return dispatch({ type: 'NOTIFY', payload: {error: res.err} })
+    postData('order', { address, mobile, cart, total }, auth.token)
+      .then(res => {
+        if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } })
 
-      dispatch({ type: 'ADD_CART', payload: [] })
-      
-      const newOrder = {
-        ...res.newOrder,
-        user: auth.user
-      }
-      dispatch({ type: 'ADD_ORDERS', payload: [...orders, newOrder] })
-      dispatch({ type: 'NOTIFY', payload: {success: res.msg} })
-      return router.push(`/order/${res.newOrder._id}`)
-    })
+        dispatch({ type: 'ADD_CART', payload: [] })
+
+        const newOrder = {
+          ...res.newOrder,
+          user: auth.user
+        }
+        dispatch({ type: 'ADD_ORDERS', payload: [...orders, newOrder] })
+        dispatch({ type: 'NOTIFY', payload: { success: res.msg } })
+        return router.push(`/order/${res.newOrder._id}`)
+      })
 
   }
-  
-  if( cart.length === 0 ) 
-    return <img className="img-responsive w-100" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624114292/cart.png" alt="not empty"/>
 
-    return(
-      <div className="row mx-auto mt-48">
-        <Head>
-          <title>Carrinho</title>
-        </Head>
+  if (cart.length === 0)
+    return <img className="img-responsive w-100" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624114292/cart.png" alt="not empty" />
 
-        <div className="col-md-8 text-secondary table-responsive my-3">
+  return (
+    <div className="row mx-auto mt-48">
+      <Head>
+        <title>Carrinho</title>
+      </Head>
 
-          <table className="table my-3">
-            <tbody>
-              {
-                cart.map(item => (
-                  <CartItem key={item._id} item={item} dispatch={dispatch} cart={cart} />
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
+      <div className="col-md-8 text-secondary table-responsive my-3">
 
-        <div className="col-md-4 my-3 text-center text-uppercase text-secondary">
-            <form>
-              <h2>Shopping</h2>
-
-              <label htmlFor="address"></label>
-              <input type="text" name="address" id="address"
-              className="form-control mb-2" value={address} placeholder="Endereço"
-              onChange={e => setAddress(e.target.value)} />
-
-              <label htmlFor="mobile"></label>
-              <input type="text" name="mobile" id="mobile"
-              className="form-control mb-2" value={mobile} placeholder="Telefone"
-              onChange={e => setMobile(e.target.value)} />
-            </form>
-
-            <h3>Total: <span className="text-danger">R${total}</span></h3>
-
-            
-            <Link href={auth.user ? '#!' : '/signin'}>
-              <a className="btn btn-dark my-2" onClick={handlePayment}>Pagamento</a>
-            </Link>
-            
-        </div>
+        <table className="table my-3">
+          <tbody>
+            {
+              cart.map(item => (
+                <CartItem key={item._id} item={item} dispatch={dispatch} cart={cart} />
+              ))
+            }
+          </tbody>
+        </table>
       </div>
-    )
-  }
-  
+
+      <div className="col-md-4 my-3 text-center text-uppercase text-secondary">
+        <h3>Total: <span className="text-danger mb-2">R${total}</span></h3>
+
+
+        {/* <Link href={auth.user ? '#!' : '/signin'}>
+  <a className="btn btn-dark my-2" onClick={handlePayment}>Pagamento</a>
+</Link> */}
+        <form>
+          <h2 className="mt-8">Formas de pagamento</h2>
+          <Link href={auth.user ? '#!' : '/signin'}>
+            <a className="btn btn-dark my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
+          </Link>
+
+          <Link href={auth.user ? '#!' : '/signin'}>
+            <a className="btn btn-dark my-2 form-control mb-2" onClick={handlePayment}>BOLETO</a>
+          </Link>
+        </form>
+
+      </div>
+    </div>
+  )
+}
+
 export default Cart

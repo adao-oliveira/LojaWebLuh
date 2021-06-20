@@ -35,7 +35,7 @@ function NavBar() {
         Cookie.remove('refreshtoken', { path: 'api/auth/accessToken' })
         localStorage.removeItem('firstLogin')
         dispatch({ type: 'AUTH', payload: {} })
-        dispatch({ type: 'NOTIFY', payload: { success: 'Logged out!' } })
+        dispatch({ type: 'NOTIFY', payload: { success: 'Desconectado!' } })
         return router.push('/')
     }
 
@@ -137,7 +137,7 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="#">
+                                <Link href="/produtos">
                                     <a className="nav-link">Produtos</a>
                                 </Link>
                             </li>

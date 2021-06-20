@@ -1,127 +1,95 @@
-import Head from 'next/head'
-import { useState, useContext, useEffect } from 'react'
-import {DataContext} from '../store/GlobalState'
-import { getData } from '../utils/fetchData'
-import ProductItem from '../components/product/ProductItem'
-import filterSearch from '../utils/filterSearch'
-import {useRouter} from 'next/router'
-// import Filter from '../components/Filter'
-import Carousel from './Carousel'
+import React from "react";
 
-const Home = (props) => {
-  const [products, setProducts] = useState(props.products)
 
-  const [isCheck, setIsCheck] = useState(false)
-  const [page, setPage] = useState(1)
-  const router = useRouter()
+const Home = () => {
 
-  const {state, dispatch} = useContext(DataContext)
-  const {auth} = state
-
-  useEffect(() => {
-    setProducts(props.products)
-  },[props.products])
-
-  useEffect(() => {
-    if(Object.keys(router.query).length === 0) setPage(1)
-  },[router.query])
-
-  const handleCheck = (id) => {
-    products.forEach(product => {
-      if(product._id === id) product.checked = !product.checked
-    })
-    setProducts([...products])
-  }
-
-  const handleCheckALL = () => {
-    products.forEach(product => product.checked = !isCheck)
-    setProducts([...products])
-    setIsCheck(!isCheck)
-  }
-
-  const handleDeleteAll = () => {
-    let deleteArr = [];
-    products.forEach(product => {
-      if(product.checked){
-          deleteArr.push({
-            data: '', 
-            id: product._id, 
-            title: 'Excluir todos os produtos selecionados?', 
-            type: 'DELETE_PRODUCT'
-          })
-      }
-    })
-
-    dispatch({type: 'ADD_MODAL', payload: deleteArr})
-  }
-
-  const handleLoadmore = () => {
-    setPage(page + 1)
-    filterSearch({router, page: page + 1})
-  }
-
-  return(
-    <div className="home_page">
-      <Head>
-        <title>Home Page</title>
-      </Head>
-
-      {/* <Filter state={state} /> */}
-      <Carousel state={state} />
-      {
-        auth.user && auth.user.role === 'admin' &&
-        <div className="delete_all btn btn-danger mt-2" style={{marginBottom: '-10px'}}>
-          <input type="checkbox" checked={isCheck} onChange={handleCheckALL}
-          style={{width: '25px', height: '25px', transform: 'translateY(8px)'}} />
-
-          <button className="btn btn-danger ml-2"
-          data-toggle="modal" data-target="#exampleModal"
-          onClick={handleDeleteAll}>
-            Deletar tudo
-          </button>
+  return (
+    <>
+      <div>
+        {/* Slide Mobile */}
+        <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-lg-none" data-ride="carousel" data-interval="2500">
+          {/* <!-- indicadores --> */}
+          {/* <ol className="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol> */}
+          {/* Slider */}
+          <div className="carousel-inner" role="listbox">
+            <div className="carousel-item active">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047759/img_ag7ai4.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047753/img3_mglyc0.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047759/img_ag7ai4.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047753/img3_mglyc0.jpg" alt="Lu Cakes" /></div>
+            </div>
+          </div>
+          {/* Avancar slide */}
+          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
-      }
 
-      <div className="products">
-        {
-          products.length === 0 
-          ? <h2>Nenhum produto</h2>
+        {/* End Slide Mobile */}
 
-          : products.map(product => (
-            <ProductItem key={product._id} product={product} handleCheck={handleCheck} />
-          ))
-        }
+        {/* Slide Desktop */}
+        <div id="carouselExampleIndicators" className="carousel slide carousel-fade d-none d-lg-block" data-ride="carousel" data-interval="2500">
+          {/* <!-- indicadores --> */}
+          <ol className="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+          {/* Slider */}
+          <div className="carousel-inner" role="listbox">
+            <div className="carousel-item active">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047759/img_ag7ai4.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047753/img3_mglyc0.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047759/img_ag7ai4.jpg" alt="Lu Cakes" /></div>
+            </div>
+            <div className="carousel-item">
+              <div className="img"><img className="d-block img-fluid" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047753/img3_mglyc0.jpg" alt="Lu Cakes" /></div>
+            </div>
+          </div>
+          {/* Avancar slide */}
+          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
+        </div>
+        {/* End Slide Desktop */}
       </div>
-      
-      {
-        props.result < page * 6 ? ""
-        : <button className="btn btn-outline-info d-block mx-auto mb-4"
-        onClick={handleLoadmore}>
-          Mostar mais
-        </button>
-      }
-    
-    </div>
-  )
-}
-
-
-export async function getServerSideProps({query}) {
-  const page = query.page || 1
-  const category = query.category || 'all'
-  const sort = query.sort || ''
-  const search = query.search || 'all'
-
-  const res = await getData(
-    `product?limit=${page * 6}&category=${category}&sort=${sort}&title=${search}`
-  )
-  // server side rendering
-  return {
-    props: {
-      products: res.products,
-      result: res.result
-    }, // will be passed to the page component as props
-  }
-}
-
-export default Home
+    </>
+  );
+};
+export default Home;
