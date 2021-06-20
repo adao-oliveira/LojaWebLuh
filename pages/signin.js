@@ -50,11 +50,11 @@ const Signin = () => {
     return(
       <div>
         <Head>
-          <title>Pagin de Login</title>
+          <title>Pagina de Login</title>
         </Head>
 
         <form className="mx-auto my-4" style={{maxWidth: '500px'}} onSubmit={handleSubmit}>
-          <div className="form-group mt-32">
+          <div className="form-group mt-48">
             <label htmlFor="exampleInputEmail1">E-mail</label>
             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             name="email" value={email} onChange={handleChangeInput} />
