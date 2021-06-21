@@ -22,7 +22,7 @@ const Apresentacao = () => {
                                     Adoro fazer sonhos dos meus clientes se transformarem em realidade através dos meus doces e bolos e colocar ao máximo amor e conhecimento em cada pedido.
                                 </p>
                             </div>
-                            <h2>
+                            <h2 className="text-lg leading-relaxed" style={{fontFamily: 'Garamond'}}>
                                 Aproveite também para nos seguir nas redes sociais:
                                 <div className="social mt-4 my-2">
                                 <a href="#" target="_blank" className="long-share-btn facebook">

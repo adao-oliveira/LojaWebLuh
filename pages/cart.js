@@ -98,7 +98,7 @@ const Cart = () => {
     return <img className="img-responsive w-100" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624114292/cart.png" alt="not empty" />
 
   return (
-    <div className="row mx-auto mt-48">
+    <div className="row mx-auto mt-32" style={{paddingTop:'50px'}}>
       <Head>
         <title>Carrinho</title>
       </Head>
