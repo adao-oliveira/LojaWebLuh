@@ -9,12 +9,12 @@ connectDB()
 export default async (req, res) => {
     switch(req.method){
         case "POST":
-            await register(req, res)
+            await registrar(req, res)
             break;
     }
 }
 
-const register = async (req, res) => {
+const registrar = async (req, res) => {
     try{
         const { name, email, password, cf_password } = req.body
 

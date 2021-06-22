@@ -6,7 +6,7 @@ import {postData} from '../utils/fetchData'
 import Cookie from 'js-cookie'
 import { useRouter } from 'next/router'
 
-const Signin = () => {
+const Login = () => {
   const initialState = { email: '', password: '' }
   const [userData, setUserData] = useState(initialState)
   const { email, password } = userData
@@ -69,11 +69,11 @@ const Signin = () => {
           <button type="submit" className="btn btn-dark w-100">Login</button>
 
           <p className="my-2">
-            Ainda não tem conta? <Link href="/register"><a style={{color: 'crimson'}}>Registrar agora</a></Link>
+            Ainda não tem conta? <Link href="/registrar"><a style={{color: 'crimson'}}>Registrar agora</a></Link>
           </p>
         </form>
       </div>
     )
   }
   
-  export default Signin
+  export default Login

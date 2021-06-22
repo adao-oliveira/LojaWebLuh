@@ -120,16 +120,16 @@ const Cart = () => {
         <h3>Total: <span className="text-danger mb-2">R${total}</span></h3>
 
 
-        {/* <Link href={auth.user ? '#!' : '/signin'}>
+        {/* <Link href={auth.user ? '#!' : '/login'}>
   <a className="btn btn-dark my-2" onClick={handlePayment}>Pagamento</a>
 </Link> */}
         <form>
           <h2 className="mt-8">Formas de pagamento</h2>
-          <Link href={auth.user ? '#!' : '/signin'}>
+          <Link href={auth.user ? '#!' : '/login'}>
             <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
           </Link>
 
-          <Link href={auth.user ? '#!' : '/signin'}>
+          <Link href={auth.user ? '#!' : '/login'}>
             <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>BOLETO</a>
           </Link>
         </form>

@@ -127,24 +127,24 @@ const ProductsManager = () => {
                         <div className="col-sm-6">
                             <label htmlFor="price">Preço</label>
                             <input type="number" name="price" value={price}
-                            placeholder="Price" className="d-block w-100 p-2"
+                            placeholder="Preço" className="d-block w-100 p-2"
                             onChange={handleChangeInput} />
                         </div>
 
                         <div className="col-sm-6">
-                            <label htmlFor="price">Em estoque</label>
+                            <label htmlFor="inStock">Em estoque</label>
                             <input type="number" name="inStock" value={inStock}
-                            placeholder="inStock" className="d-block w-100 p-2"
+                            placeholder="Em estoque" className="d-block w-100 p-2"
                             onChange={handleChangeInput} />
                         </div>
                     </div>
 
                     <textarea name="description" id="description" cols="30" rows="4"
-                    placeholder="Description" onChange={handleChangeInput}
+                    placeholder="Resumo" onChange={handleChangeInput}
                     className="d-block my-4 w-100 p-2" value={description} />
 
                     <textarea name="content" id="content" cols="30" rows="6"
-                    placeholder="Content" onChange={handleChangeInput}
+                    placeholder="Descrição" onChange={handleChangeInput}
                     className="d-block my-4 w-100 p-2" value={content} />
 
                     <div className="input-group-prepend px-0 my-2">
@@ -161,7 +161,7 @@ const ProductsManager = () => {
                         </select>
                     </div>
 
-                    <button type="submit" className="btn btn-info my-2 px-4">
+                    <button type="submit" className="btn btn-danger my-2 px-4">
                         {onEdit ? 'Update': 'Create'}
                     </button>
 

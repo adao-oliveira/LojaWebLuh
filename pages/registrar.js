@@ -7,7 +7,7 @@ import { postData } from '../utils/fetchData'
 import { useRouter } from 'next/router'
 
 
-const Register = () => {
+const Registrar = () => {
   const initialState = { name: '', email: '', password: '', cf_password: '' }
   const [userData, setUserData] = useState(initialState)
   const { name, email, password, cf_password } = userData
@@ -30,7 +30,7 @@ const Register = () => {
 
     dispatch({ type: 'NOTIFY', payload: { loading: true } })
 
-    const res = await postData('auth/register', userData)
+    const res = await postData('auth/registrar', userData)
 
     if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } })
 
@@ -42,9 +42,9 @@ const Register = () => {
   }, [auth])
 
   return (
-    <div>
+    <div className="pt-16">
       <Head>
-        <title>Pagina de Registro</title>
+        <title>Registrar</title>
       </Head>
 
       <form className="mx-auto my-4 mt-48" style={{ maxWidth: '500px' }} onSubmit={handleSubmit}>
@@ -73,14 +73,14 @@ const Register = () => {
             name="cf_password" value={cf_password} onChange={handleChangeInput} />
         </div>
 
-        <button type="submit" className="btn btn-dark w-100">Register</button>
+        <button type="submit" className="btn btn-dark w-100">Registrar</button>
 
         <p className="my-2">
-          Já tem uma conta? <Link href="/signin"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
+          Já tem uma conta? <Link href="/login"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
         </p>
       </form>
     </div>
   )
 }
 
-export default Register
+export default Registrar

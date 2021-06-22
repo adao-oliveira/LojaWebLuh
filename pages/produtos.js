@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useState, useContext, useEffect } from 'react'
 import {DataContext} from '../store/GlobalState'
 import { getData } from '../utils/fetchData'
-import ProductItem from '../components/product/ProductItem'
+import produtoItem from '../components/product/produtoItem'
 import filterSearch from '../utils/filterSearch'
 import {useRouter} from 'next/router'
 // import Filter from '../components/Filter'
@@ -86,7 +86,7 @@ const Produtos = (props) => {
           ? <h2>Nenhum produto</h2>
 
           : products.map(product => (
-            <ProductItem key={product._id} product={product} handleCheck={handleCheck} />
+            <produtoItem key={product._id} product={product} handleCheck={handleCheck} />
           ))
         }
       </div>

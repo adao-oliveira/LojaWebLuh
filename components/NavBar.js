@@ -67,7 +67,7 @@ function NavBar() {
                 </a>
 
                 <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <Link href="/profile">
+                    <Link href="/perfil">
                         <a className="dropdown-item">Perfil</a>
                     </Link>
                     {
@@ -174,8 +174,8 @@ function NavBar() {
                             {
                                 Object.keys(auth).length === 0
                                     ? <li className="nav-item">
-                                        <Link href="/signin">
-                                            <a className={"nav-link" + isActive('/signin')}>
+                                        <Link href="/login">
+                                            <a className={"nav-link" + isActive('/login')}>
                                                 <i className="fas fa-user" aria-hidden="true"></i> Login
                                             </a>
                                         </Link>

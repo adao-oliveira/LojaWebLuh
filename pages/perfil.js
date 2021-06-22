@@ -8,7 +8,7 @@ import { patchData } from '../utils/fetchData'
 
 import {imageUpload} from '../utils/imageUpload'
 
-const Profile = () => {
+const Perfil = () => {
     const initialSate = {
         avatar: '',
         name: '',
@@ -87,15 +87,15 @@ const Profile = () => {
 
     if(!auth.user) return null;
     return( 
-        <div className="profile_page">
+        <div className="perfil_page">
             <Head>
                 <title>Perfil</title>
             </Head>
 
-            <section className="row text-secondary my-3">
+            <section className="row text-secondary my-3 mt-48">
                 <div className="col-md-4">
                     <h3 className="text-center text-uppercase">
-                        {auth.user.role === 'user' ? 'User Profile' : 'Admin Profile'}
+                        {auth.user.role === 'user' ? 'User Profile' : 'Perfil Administrador'}
                     </h3>
 
                     <div className="avatar">
@@ -126,11 +126,11 @@ const Profile = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="cf_password">Confirm New Password</label>
+                        <label htmlFor="cf_password">Confirmar nova Senha</label>
                         <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
                     </div>
 
-                    <button className="btn btn-info" disabled={notify.loading}
+                    <button className="btn btn-danger" disabled={notify.loading}
                     onClick={handleUpdateProfile}>
                         Atualizar
                     </button>
@@ -193,4 +193,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default Perfil
