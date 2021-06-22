@@ -21,8 +21,8 @@ const getUsers = async (req, res) => {
        if(result.role !== 'admin') 
        return res.status(400).json({err: "Autenticação não é válida"})
 
-        const users = await Users.find().select('-password')
-        res.json({users})
+        const usuarios = await Users.find().select('-password')
+        res.json({usuarios})
 
     } catch (err) {
         return res.status(500).json({err: err.message})

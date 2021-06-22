@@ -11,20 +11,20 @@ const EditUser = () => {
     const { id } = router.query
 
     const { state, dispatch } = useContext(DataContext)
-    const { auth, users } = state
+    const { auth, usuarios } = state
 
     const [editUser, setEditUser] = useState([])
     const [checkAdmin, setCheckAdmin] = useState(false)
     const [num, setNum] = useState(0)
 
     useEffect(() => {
-        users.forEach(user => {
+        usuarios.forEach(user => {
             if (user._id === id) {
                 setEditUser(user)
                 setCheckAdmin(user.role === 'admin' ? true : false)
             }
         })
-    }, [users])
+    }, [usuarios])
 
     const handleCheck = () => {
         setCheckAdmin(!checkAdmin)
@@ -39,7 +39,7 @@ const EditUser = () => {
                 .then(res => {
                     if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } })
 
-                    dispatch(updateItem(users, editUser._id, {
+                    dispatch(updateItem(usuarios, editUser._id, {
                         ...editUser, role
                     }, 'ADD_USERS'))
 
