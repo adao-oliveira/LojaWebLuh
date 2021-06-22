@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 
 const ProductsManager = () => {
     const initialState = {
+        product_id: "",
         title: '',
         price: 0,
         inStock: 0,
