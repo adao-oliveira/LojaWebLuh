@@ -15,6 +15,24 @@ nav.navbar.bootsnav{
     background-color: #e5202a;
 }
 
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #FFC0CB !important;
+}
+
+.navbar-light .navbar-toggler {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.navbar-light .navbar-toggler:hover {
+    color: #FFC0CB !important;
+}
+
+.fa-bars:before {
+    content: "\f0c9";
+    color: #fff !important;
+}
+
 /* Navbar Full
 =================================*/
 nav.bootsnav.navbar-full{
