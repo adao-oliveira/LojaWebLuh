@@ -31,7 +31,7 @@ const reducers = (state, action) => {
         case ACTIONS.ADD_USERS:
             return {
                 ...state,
-                users: action.payload
+                usuarios: action.payload
             };
         case ACTIONS.ADD_CATEGORIES:
             return {

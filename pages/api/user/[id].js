@@ -1,5 +1,5 @@
 import connectDB from '../../../utils/connectDB'
-import Users from '../../../models/userModel'
+import Usuarios from '../../../models/userModel'
 import auth from '../../../middleware/auth'
 
 connectDB()
@@ -24,7 +24,7 @@ const updateRole = async (req, res) => {
        const {id} = req.query
        const {role} = req.body
 
-       await Users.findOneAndUpdate({_id: id}, {role})
+       await Usuarios.findOneAndUpdate({_id: id}, {role})
        res.json({msg: 'Atualizado com sucesso!'})
 
     } catch (err) {
@@ -40,7 +40,7 @@ const deleteUser = async (req, res) => {
 
        const {id} = req.query
 
-       await Users.findByIdAndDelete(id)
+       await Usuarios.findByIdAndDelete(id)
        res.json({msg: 'Deletado com Successo!'})
 
     } catch (err) {

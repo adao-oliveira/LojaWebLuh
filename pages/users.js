@@ -3,15 +3,15 @@ import { useContext } from 'react'
 import {DataContext} from '../store/GlobalState'
 import Link from 'next/link'
 
-const Users = () => {
+const Usuarios = () => {
     const {state, dispatch} = useContext(DataContext)
-    const {users, auth, modal} = state
+    const {usuarios, auth, modal} = state
 
     if(!auth.user) return null;
     return(
         <div className="table-responsive">
             <Head>
-                <title>Users</title>
+                <title>Usuários</title>
             </Head>
 
             <table className="table w-100">
@@ -29,7 +29,7 @@ const Users = () => {
 
                 <tbody>
                     {
-                        users.map((user, index)=> (
+                        usuarios.map((user, index)=> (
                             <tr key={user._id} style={{cursor: 'pointer'}}>
                                 <th>{index + 1}</th>
                                 <th>{user._id}</th>
@@ -65,7 +65,7 @@ const Users = () => {
                                         data-toggle="modal" data-target="#exampleModal"
                                         onClick={() => dispatch({
                                             type: 'ADD_MODAL',
-                                            payload: [{ data: users, id: user._id, title: user.name, type: 'ADD_USERS' }]
+                                            payload: [{ data: usuarios, id: user._id, title: user.name, type: 'ADD_USERS' }]
                                         })}></i>
                                         
                                         : <i className="fas fa-trash-alt text-danger ml-2" title="Remove"></i>
@@ -82,4 +82,4 @@ const Users = () => {
     )
 }
 
-export default Users
+export default Usuarios

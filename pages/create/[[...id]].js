@@ -57,7 +57,7 @@ const ProductsManager = () => {
         return dispatch({type: 'NOTIFY', payload: {error: 'Arquivos não existem'}})
 
         files.forEach(file => {
-            if(file.size > 2084 * 2084)
+            if(file.size > 1080 * 1080 * 5)
             return err = 'O maior tamanho de imagem é 1mb'
 
             if(file.type !== 'image/jpeg' && file.type !== 'image/png')
@@ -162,7 +162,7 @@ const ProductsManager = () => {
                     </div>
 
                     <button type="submit" className="btn btn-danger my-2 px-4">
-                        {onEdit ? 'Update': 'Create'}
+                        {onEdit ? 'Atualizar': 'Criar'}
                     </button>
 
                 </div>
