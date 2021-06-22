@@ -26,6 +26,7 @@ nav.navbar.bootsnav{
 
 .navbar-light .navbar-toggler:hover {
     color: #FFC0CB !important;
+    border: none !important;
 }
 
 .fa-bars:before {
