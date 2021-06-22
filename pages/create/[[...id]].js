@@ -113,7 +113,7 @@ const ProductsManager = () => {
     }
 
     return (
-        <div className="products_manager">
+        <div className="products_manager mt-48">
             <Head>
                 <title>Produtos</title>
             </Head>
