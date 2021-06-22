@@ -56,10 +56,10 @@ const Profile = () => {
         if(!file)
             return dispatch({type: 'NOTIFY', payload: {error: 'Arquivo não existe'}})
 
-        if(file.size > 1024 * 1024) //1mb
-            return dispatch({type: 'NOTIFY', payload: {error: 'O maior tamanho de imagem é 1mb.'}})
+        if(file.size > 1024 * 1024 * 5) //5mb
+            return dispatch({type: 'NOTIFY', payload: {error: 'O maior tamanho de imagem é 5mb.'}})
 
-        if(file.type !== "image/jpeg" && file.type !== "image/png") //1mb
+        if(file.type !== "image/jpeg" && file.type !== "image/png") //5mb
             return dispatch({type: 'NOTIFY', payload: {error: 'O formato da imagem está incorreto'}})
         
         setData({...data, avatar: file})
