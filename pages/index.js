@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactVideo } from "reactjs-media";
 
 
 const Home = () => {
@@ -7,8 +6,8 @@ const Home = () => {
   return (
     <>
       <div>
-        <div className="mt-48">
-          <video className="video-fluid z-depth-1" autoplay loop muted>
+        <div className="mt-32">
+          <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
             <source src="https://res.cloudinary.com/db5gm6hgs/video/upload/v1624326322/video_redrt0.mp4" type="video/mp4" />
           </video>
         </div>
