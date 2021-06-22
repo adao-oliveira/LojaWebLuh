@@ -11,10 +11,10 @@ const ProductItem = ({product, handleCheck}) => {
         return(
             <>
                 <Link href={`product/${product._id}`}>
-                    <a className="btn btn-info"
+                    <a className="btn btn-success"
                     style={{marginRight: '5px', flex: 1}}>Visualizar</a>
                 </Link>
-                <button className="btn btn-success"
+                <button className="btn btn-danger"
                 style={{marginLeft: '5px', flex: 1}}
                 disabled={product.inStock === 0 ? true : false} 
                 onClick={() => dispatch(addToCart(product, cart))} >

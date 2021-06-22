@@ -50,7 +50,7 @@ class MyDocument extends Document {
 
                     <div className="whatsapp-fixo">
                         <a href="https://wa.me/5511991781497?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20seu%20produto.">
-                            <img src="https://webofinfo.com/wp-content/uploads/2018/04/WhatsApp-Under2B16-webofinfo.png" width="60px" height="60px" alt="Que tal fazermos um orçamento?" />
+                            <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624330267/whatsapp_aiqzbi.png" width="60px" height="60px" alt="Que tal fazermos um orçamento?" />
                         </a>
                     </div>
                 </body>
