@@ -93,7 +93,7 @@ const Produtos = (props) => {
       
       {
         props.result < page * 6 ? ""
-        : <button className="btn btn-outline-info d-block mx-auto mb-4"
+        : <button className="btn btn-outline-danger d-block mx-auto mb-4"
         onClick={handleLoadmore}>
           Mostar mais
         </button>

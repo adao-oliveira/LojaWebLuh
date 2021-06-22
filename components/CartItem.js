@@ -11,7 +11,7 @@ const CartItem = ({item, dispatch, cart}) => {
             </td>
 
             <td style={{minWidth: '200px'}} className="w-50 align-middle" >
-                <h5 className="text-capitalize text-secondary">
+                <h5 className="text-capitalize text-dark">
                     <Link href={`/product/${item._id}`}>
                         <a>{item.title}</a>
                     </Link>
@@ -26,13 +26,13 @@ const CartItem = ({item, dispatch, cart}) => {
             </td>
 
             <td className="align-middle" style={{minWidth: '150px'}}>
-                <button className="btn btn-outline-secondary"
+                <button className="btn btn-outline-dark"
                 onClick={ () => dispatch(decrease(cart, item._id)) } 
                 disabled={item.quantity === 1 ? true : false} > - </button>
 
                 <span className="px-3">{item.quantity}</span>
 
-                <button className="btn btn-outline-secondary"
+                <button className="btn btn-outline-dark"
                 onClick={ () => dispatch(increase(cart, item._id)) }
                 disabled={item.quantity === item.inStock ? true : false} > + </button>
             </td>

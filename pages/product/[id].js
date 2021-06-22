@@ -17,7 +17,7 @@ const DetailProduct = (props) => {
     }
 
     return(
-        <div className="row detail_page">
+        <div className="row detail_page mt-48">
             <Head>
                 <title>Detalhes do Produto</title>
             </Head>
@@ -58,7 +58,7 @@ const DetailProduct = (props) => {
                     {product.content}
                 </div>
 
-                <button type="button" className="btn btn-dark d-block my-3 px-5"
+                <button type="button" className="btn btn-danger d-block my-3 px-5"
                 onClick={() => dispatch(addToCart(product, cart))} >
                     Comprar
                 </button>

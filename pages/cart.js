@@ -103,7 +103,7 @@ const Cart = () => {
         <title>Carrinho</title>
       </Head>
 
-      <div className="col-md-8 text-secondary table-responsive my-3">
+      <div className="col-md-8 text-dark table-responsive my-3">
 
         <table className="table my-3">
           <tbody>
@@ -116,7 +116,7 @@ const Cart = () => {
         </table>
       </div>
 
-      <div className="col-md-4 my-3 text-center text-uppercase text-secondary">
+      <div className="col-md-4 my-3 text-center text-uppercase text-dark">
         <h3>Total: <span className="text-danger mb-2">R${total}</span></h3>
 
 
@@ -126,11 +126,11 @@ const Cart = () => {
         <form>
           <h2 className="mt-8">Formas de pagamento</h2>
           <Link href={auth.user ? '#!' : '/signin'}>
-            <a className="btn btn-dark my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
+            <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
           </Link>
 
           <Link href={auth.user ? '#!' : '/signin'}>
-            <a className="btn btn-dark my-2 form-control mb-2" onClick={handlePayment}>BOLETO</a>
+            <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>BOLETO</a>
           </Link>
         </form>
 

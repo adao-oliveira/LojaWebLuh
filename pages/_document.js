@@ -29,6 +29,7 @@ class MyDocument extends Document {
                     <link rel="stylesheet" href="/css/bootsnav.css" />
                     <link rel="stylesheet" href="/css/bootstrap.min.css" />
                     <link rel="stylesheet" href="/css/all.css" />
+                    <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" />
                     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"></link>
                     <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet"></link>
                     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
