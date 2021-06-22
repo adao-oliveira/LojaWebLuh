@@ -16,7 +16,7 @@ const ProductsManager = () => {
         category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const { title, price, inStock, description, content, category } = product
+    const { product_id, title, price, inStock, description, content, category } = product
 
     const [images, setImages] = useState([])
 
