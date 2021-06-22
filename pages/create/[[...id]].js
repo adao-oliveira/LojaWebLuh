@@ -88,7 +88,7 @@ const ProductsManager = () => {
         if (auth.user.role !== 'admin')
             return dispatch({ type: 'NOTIFY', payload: { error: 'A autenticação não é válida' } })
 
-        if (!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
+        if (!product_id || !title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
             return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione todos os campos' } })
 
 
