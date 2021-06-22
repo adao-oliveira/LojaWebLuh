@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { decrease, increase } from '../store/Actions'
 
-const CartItem = ({item, dispatch, cart}) => {
+const CartItem = ({item, dispatch, carrinho}) => {
     return (
         <tr>
             <td style={{width: '100px', overflow: 'hidden'}}>
@@ -27,13 +27,13 @@ const CartItem = ({item, dispatch, cart}) => {
 
             <td className="align-middle" style={{minWidth: '150px'}}>
                 <button className="btn btn-outline-dark"
-                onClick={ () => dispatch(decrease(cart, item._id)) } 
+                onClick={ () => dispatch(decrease(carrinho, item._id)) } 
                 disabled={item.quantity === 1 ? true : false} > - </button>
 
                 <span className="px-3">{item.quantity}</span>
 
                 <button className="btn btn-outline-dark"
-                onClick={ () => dispatch(increase(cart, item._id)) }
+                onClick={ () => dispatch(increase(carrinho, item._id)) }
                 disabled={item.quantity === item.inStock ? true : false} > + </button>
             </td>
 
@@ -42,7 +42,7 @@ const CartItem = ({item, dispatch, cart}) => {
                 style={{fontSize: '18px'}} data-toggle="modal" data-target="#exampleModal"
                 onClick={() => dispatch({
                     type: 'ADD_MODAL',
-                    payload: [{ data: cart, id: item._id, title: item.title, type: 'ADD_CART' }]
+                    payload: [{ data: carrinho, id: item._id, title: item.title, type: 'ADD_CART' }]
                 })} ></i>
             </td>
         </tr>

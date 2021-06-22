@@ -75,7 +75,7 @@ const OrderDetail = ({ orderDetail, state, dispatch }) => {
                                 <div>
                                     <h3>Ordem dos itens</h3>
                                     {
-                                        order.cart.map(item => (
+                                        order.carrinho.map(item => (
                                             <div className="row border-bottom mx-0 p-2 justify-content-betwenn align-items-center" key={item._id} style={{ maxWidth: '550px' }}>
                                                 <img src={item.images[0].url} alt={item.images[0].url}
                                                     style={{ width: '50px', height: '45px', objectFit: 'cover' }} />

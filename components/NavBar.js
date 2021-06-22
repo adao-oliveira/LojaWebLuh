@@ -20,7 +20,7 @@ function abrefecha() {
 function NavBar() {
     const router = useRouter()
     const { state, dispatch } = useContext(DataContext)
-    const { auth, cart } = state
+    const { auth, carrinho } = state
 
 
     const isActive = (r) => {
@@ -103,8 +103,8 @@ function NavBar() {
                         </Link>
                         <ul className="nav navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link href="/cart">
-                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/cart')}>
+                                <Link href="/carrinho">
+                                    <a className={"nav-link text-right -mt-12 d-lg-none" + isActive('/carrinho')}>
                                         <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
                                             <span className="position-absolute"
                                                 style={{
@@ -116,7 +116,7 @@ function NavBar() {
                                                     color: 'white',
                                                     fontSize: '14px'
                                                 }}>
-                                                {cart.length}
+                                                {carrinho.length}
                                             </span>
                                         </i>
                                     </a>
@@ -152,8 +152,8 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/cart">
-                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/cart')}>
+                                <Link href="/carrinho">
+                                    <a className={"nav-link text-right d-none d-lg-block ml-12" + isActive('/carrinho')}>
                                         <i className="fas fa-shopping-cart position-relative text-3xl" aria-hidden="true">
                                             <span className="position-absolute"
                                                 style={{
@@ -165,7 +165,7 @@ function NavBar() {
                                                     color: 'white',
                                                     fontSize: '14px'
                                                 }}>
-                                                {cart.length}
+                                                {carrinho.length}
                                             </span>
                                         </i>
                                     </a>

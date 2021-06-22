@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext)
-  const { cart, auth, orders } = state
+  const { carrinho, auth, orders } = state
 
   const [total, setTotal] = useState(0)
 
@@ -21,7 +21,7 @@ const Cart = () => {
 
   useEffect(() => {
     const getTotal = () => {
-      const res = cart.reduce((prev, item) => {
+      const res = carrinho.reduce((prev, item) => {
         return prev + (item.price * item.quantity)
       }, 0)
 
@@ -29,7 +29,7 @@ const Cart = () => {
     }
 
     getTotal()
-  }, [cart])
+  }, [carrinho])
 
   useEffect(() => {
     const cartLocal = JSON.parse(localStorage.getItem('__next__cart01__devat'))
@@ -59,14 +59,14 @@ const Cart = () => {
       return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione seu endereço e celular' } })
 
     let newCart = [];
-    for (const item of cart) {
+    for (const item of carrinho) {
       const res = await getData(`product/${item._id}`)
       if (res.product.inStock - item.quantity >= 0) {
         newCart.push(item)
       }
     }
 
-    if (newCart.length < cart.length) {
+    if (newCart.length < carrinho.length) {
       setCallback(!callback)
       return dispatch({
         type: 'NOTIFY', payload: {
@@ -77,7 +77,7 @@ const Cart = () => {
 
     dispatch({ type: 'NOTIFY', payload: { loading: true } })
 
-    postData('order', { address, mobile, cart, total }, auth.token)
+    postData('order', { address, mobile, carrinho, total }, auth.token)
       .then(res => {
         if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } })
 
@@ -94,7 +94,7 @@ const Cart = () => {
 
   }
 
-  if (cart.length === 0)
+  if (carrinho.length === 0)
     return <img className="img-responsive w-100" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624114292/cart.png" alt="not empty" />
 
   return (
@@ -108,8 +108,8 @@ const Cart = () => {
         <table className="table my-3">
           <tbody>
             {
-              cart.map(item => (
-                <CartItem key={item._id} item={item} dispatch={dispatch} cart={cart} />
+              carrinho.map(item => (
+                <CartItem key={item._id} item={item} dispatch={dispatch} carrinho={carrinho} />
               ))
             }
           </tbody>

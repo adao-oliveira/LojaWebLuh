@@ -36,13 +36,13 @@ const getOrders = async (req, res) => {
 const createOrder = async (req, res) => {
     try {
         const result = await auth(req, res)
-        const { address, mobile, cart, total } = req.body
+        const { address, mobile, carrinho, total } = req.body
 
         const newOrder = new Orders({
-            user: result.id, address, mobile, cart, total
+            user: result.id, address, mobile, carrinho, total
         })
 
-        cart.filter(item => {
+        carrinho.filter(item => {
             return sold(item._id, item.quantity, item.inStock, item.sold)
         })
 

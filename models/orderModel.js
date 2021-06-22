@@ -7,7 +7,7 @@ const orderSchema = new mongoose.Schema({
     },
     address: String,
     mobile: String,
-    cart: Array,
+    carrinho: Array,
     total: Number,
     paymentId: String,
     method: String,
