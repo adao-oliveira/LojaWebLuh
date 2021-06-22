@@ -1,5 +1,5 @@
 import connectDB from '../../../utils/connectDB'
-import Usuarios from '../../../models/userModel'
+import Users from '../../../models/userModel'
 import auth from '../../../middleware/auth'
 
 connectDB()
@@ -21,8 +21,8 @@ const getUsers = async (req, res) => {
        if(result.role !== 'admin') 
        return res.status(400).json({err: "Autenticação não é válida"})
 
-        const usuarios = await Usuarios.find().select('-password')
-        res.json({usuarios})
+        const users = await Users.find().select('-password')
+        res.json({users})
 
     } catch (err) {
         return res.status(500).json({err: err.message})
@@ -35,7 +35,7 @@ const uploadInfor = async (req, res) => {
         const result = await auth(req, res)
         const {name, avatar} = req.body
 
-        const newUser = await Usuarios.findOneAndUpdate({_id: result.id}, {name, avatar})
+        const newUser = await Users.findOneAndUpdate({_id: result.id}, {name, avatar})
 
         res.json({
             msg: "Atualizado com sucesso!",

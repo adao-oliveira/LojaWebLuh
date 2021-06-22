@@ -42,7 +42,7 @@ function NavBar() {
     const adminRouter = () => {
         return (
             <>
-                <Link href="/usuarios">
+                <Link href="/users">
                     <a className="dropdown-item">Usuários</a>
                 </Link>
                 <Link href="/create">

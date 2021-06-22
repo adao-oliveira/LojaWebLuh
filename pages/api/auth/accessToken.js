@@ -1,5 +1,5 @@
 import connectDB from '../../../utils/connectDB'
-import Usuarios from '../../../models/userModel'
+import Users from '../../../models/userModel'
 import jwt from 'jsonwebtoken'
 import { createAccessToken } from '../../../utils/generateToken'
 
@@ -13,7 +13,7 @@ export default async (req, res) => {
         const result = jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET)
         if(!result) return res.status(400).json({err: 'Seu token está incorreto ou expirou'})
 
-        const user = await Usuarios.findById(result.id)
+        const user = await Users.findById(result.id)
         if(!user) return res.status(400).json({err: 'Usuário não existe'})
 
         const access_token = createAccessToken({id: user._id})
