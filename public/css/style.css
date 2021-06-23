@@ -275,12 +275,22 @@ a.long-share-btn {
 
 /* testmony container */
 h2 {
-color: #111;
+color: rgba(17, 17, 17, 0.712);
 text-align: center;
 text-transform: uppercase;
 position: relative;
 margin: 30px 0 60px;
 }
+@media (min-width: 992px) {
+  .depoimento h2 {
+    padding-top: 4rem;
+  }
+ }
+ @media (max-width: 320px) {
+  .depoimento h2 {
+    padding-top: 3rem;
+  }
+ }
 h2::after {
 content: "";
 width: 140px;
