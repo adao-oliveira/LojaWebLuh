@@ -142,7 +142,7 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="#">
+                                <Link href="/depoimentos">
                                     <a className="nav-link">Depoimentos</a>
                                 </Link>
                             </li>
