@@ -29,7 +29,7 @@ const Home = () => {
                       <div class="card" style={{ width: '18rem' }}>
                         <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
                         <div className="card-body">
-                          <h5 className="card-title">Empada</h5>
+                          <h5 className="overview mt-4 text-base"><b>Bolo temático:</b> Estrada</h5>
                           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <a href="#" className="btn btn-danger">Veja mais</a>
                         </div>
@@ -39,20 +39,20 @@ const Home = () => {
                   {/* carousel 2 */}
                   <div className="item carousel-item">
                     <div class="card" style={{ width: '18rem' }}>
-                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624561920/fotos%20home/unicornio_frgfl7.jpg" alt="" />
                       <div className="card-body">
-                        <h5 className="card-title">Doce</h5>
+                        <h5 className="overview mt-4 text-base"><b>Bolo temático:</b> Unicórnio</h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-danger">Veja mais</a>
                       </div>
                     </div>
                   </div>
-                  {/* carousel 2 */}
+                  {/* carousel 3 */}
                   <div className="item carousel-item">
                     <div class="card" style={{ width: '18rem' }}>
-                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624561920/fotos%20home/mario_qbrzem.jpg" alt="" />
                       <div className="card-body">
-                        <h5 className="card-title">Salgado</h5>
+                        <h5 className="overview mt-4 text-base"><b>Bolo temático:</b> Super Mário World</h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-danger">Veja mais</a>
                       </div>
@@ -61,17 +61,17 @@ const Home = () => {
 
                 </div>
                 {/* <!-- Carousel Controls --> */}
-                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="prev">
+                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '10px' }} href="#myCarousel" data-slide="prev">
                   <i className="fa fa-angle-left"></i>
                 </a>
-                <a className="carousel-control right carousel-control-next" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="next">
+                <a className="carousel-control right carousel-control-next" style={{ marginTop: '10px' }} href="#myCarousel" data-slide="next">
                   <i className="fa fa-angle-right"></i>
                 </a>
               </div>
 
-              {/* Bolos */}
+              {/* SALGADOS */}
               <div className="depoimento">
-                <h2>Empada</h2>
+                <h2>Salgados</h2>
               </div>
               <div id="myCarousel" className="carousel slide" data-ride="carousel">
                 {/* <!-- Carousel --> */}
@@ -80,9 +80,9 @@ const Home = () => {
                   <div className="item carousel-item active">
                     <div class="card-deck">
                       <div class="card" style={{ width: '18rem' }}>
-                        <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                        <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624562583/fotos%20home/empada_ncsihn.jpg" alt="" />
                         <div className="card-body">
-                          <h5 className="card-title">Empada</h5>
+                          <h5 className="overview mt-4 text-base"><b>Empada</b></h5>
                           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <a href="#" className="btn btn-danger">Veja mais</a>
                         </div>
@@ -92,20 +92,20 @@ const Home = () => {
                   {/* carousel 2 */}
                   <div className="item carousel-item">
                     <div class="card" style={{ width: '18rem' }}>
-                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624562833/fotos%20home/enroladinho_zwvpog.jpg" alt="" />
                       <div className="card-body">
-                        <h5 className="card-title">Doce</h5>
+                        <h5 className="overview mt-4 text-base"><b>Enroladinho de Salsicha</b></h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-danger">Veja mais</a>
                       </div>
                     </div>
                   </div>
-                  {/* carousel 2 */}
+                  {/* carousel 3 */}
                   <div className="item carousel-item">
                     <div class="card" style={{ width: '18rem' }}>
-                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624562583/fotos%20home/coxinha2_hxroux.jpg" alt="" />
                       <div className="card-body">
-                        <h5 className="card-title">Salgado</h5>
+                        <h5 className="overview mt-4 text-base"><b>Festa</b></h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-danger">Veja mais</a>
                       </div>
@@ -114,15 +114,15 @@ const Home = () => {
 
                 </div>
                 {/* <!-- Carousel Controls --> */}
-                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="prev">
+                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '10px' }} href="#myCarousel" data-slide="prev">
                   <i className="fa fa-angle-left"></i>
                 </a>
-                <a className="carousel-control right carousel-control-next" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="next">
+                <a className="carousel-control right carousel-control-next" style={{ marginTop: '10px' }} href="#myCarousel" data-slide="next">
                   <i className="fa fa-angle-right"></i>
                 </a>
               </div>
 
-              {/* Bolos */}
+              {/* DOCES */}
               <div className="depoimento">
                 <h2>Doces</h2>
               </div>
@@ -133,9 +133,10 @@ const Home = () => {
                   <div className="item carousel-item active">
                     <div class="card-deck">
                       <div class="card" style={{ width: '18rem' }}>
-                        <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                        <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
+                          <source src="https://res.cloudinary.com/db5gm6hgs/video/upload/v1624561621/videos%20home/video-torta_p2hgqd.mp4" type="video/mp4" /> </video>
                         <div className="card-body">
-                          <h5 className="card-title">Empada</h5>
+                          <h5 className="overview mt-4 text-base"><b>Torta de Limão Suíço</b></h5>
                           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <a href="#" className="btn btn-danger">Veja mais</a>
                         </div>
@@ -144,21 +145,35 @@ const Home = () => {
                   </div>
                   {/* carousel 2 */}
                   <div className="item carousel-item">
+                    <div class="card-deck">
+                      <div class="card" style={{ width: '18rem' }}>
+                        <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
+                          <source src="https://res.cloudinary.com/db5gm6hgs/video/upload/v1624561621/videos%20home/video-cupcake_tp5bm9.mp4" type="video/mp4" /> </video>
+                        <div className="card-body">
+                          <h5 className="overview mt-4 text-base"><b>Cupcake</b></h5>
+                          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" className="btn btn-danger">Veja mais</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 3 */}
+                  <div className="item carousel-item">
                     <div class="card" style={{ width: '18rem' }}>
-                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624562583/fotos%20home/brigadeiro_clqq8v.jpg" alt="" />
                       <div className="card-body">
-                        <h5 className="card-title">Doce</h5>
+                        <h5 className="overview mt-4 text-base"><b>Docinho de Festa</b></h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-danger">Veja mais</a>
                       </div>
                     </div>
                   </div>
-                  {/* carousel 2 */}
+                  {/* carousel 4 */}
                   <div className="item carousel-item">
                     <div class="card" style={{ width: '18rem' }}>
-                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624562583/fotos%20home/maca_bn3ftc.jpg" alt="" />
                       <div className="card-body">
-                        <h5 className="card-title">Salgado</h5>
+                        <h5 className="overview mt-4 text-base"><b>Maça Caramelizada</b></h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-danger">Veja mais</a>
                       </div>
@@ -167,10 +182,10 @@ const Home = () => {
 
                 </div>
                 {/* <!-- Carousel Controls --> */}
-                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="prev">
+                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '10px' }} href="#myCarousel" data-slide="prev">
                   <i className="fa fa-angle-left"></i>
                 </a>
-                <a className="carousel-control right carousel-control-next" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="next">
+                <a className="carousel-control right carousel-control-next" style={{ marginTop: '10px' }} href="#myCarousel" data-slide="next">
                   <i className="fa fa-angle-right"></i>
                 </a>
               </div>
