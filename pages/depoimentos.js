@@ -17,22 +17,43 @@ const Depoimentos = () => {
                                     <div className="img-box">
                                         <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624115325/Pngtree_stay_home_illustration_of_cute_6374931_p2gzas.png" alt="" />
                                     </div>
-                                    <p className="overview mt-4 text-base"><b>Juliana</b>, Bolo de aniversário</p>
-                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624471851/Screenshot_20210623-150949_WhatsApp_gxulta.jpg" alt="" />
+                                    <p className="overview mt-4 text-base"><b></b>Bolo de aniversário</p>
+                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624541888/dp4_vknayk.jpg" alt="" />
                                 </div>
                                 <div className="item carousel-item">
                                     <div className="img-box">
                                         <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624115325/Pngtree_stay_home_illustration_of_cute_6374931_p2gzas.png" alt="" />
                                     </div>
-                                    <p className="overview mt-4 text-base"><b>Luciana</b>, Salgados</p>
-                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624471851/Screenshot_20210623-150949_WhatsApp_gxulta.jpg" alt="" />
+                                    <p className="overview mt-4 text-base"><b>Stella</b>, Bolo</p>
+                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624541888/dp3_eh4hhl.jpg" alt="" />
                                 </div>
                                 <div className="item carousel-item">
                                     <div className="img-box">
                                         <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624115325/Pngtree_stay_home_illustration_of_cute_6374931_p2gzas.png" alt="" />
                                     </div>
-                                    <p className="overview mt-4 text-base"><b>Adão</b>, Doces</p>
-                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624471851/Screenshot_20210623-150949_WhatsApp_gxulta.jpg" alt="" />
+                                    <p className="overview mt-4 text-base"><b>Tassi</b>, Empada</p>
+                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624541889/dp5_hyvr07.jpg" alt="" />
+                                </div>
+                                <div className="item carousel-item">
+                                    <div className="img-box">
+                                        <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624115325/Pngtree_stay_home_illustration_of_cute_6374931_p2gzas.png" alt="" />
+                                    </div>
+                                    <p className="overview mt-4 text-base"><b>Saulo</b>, Salgados</p>
+                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624541888/dp2_q5ay4z.jpg" alt="" />
+                                </div>
+                                <div className="item carousel-item">
+                                    <div className="img-box">
+                                        <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624115325/Pngtree_stay_home_illustration_of_cute_6374931_p2gzas.png" alt="" />
+                                    </div>
+                                    <p className="overview mt-4 text-base"><b>Stephanie</b>, Maça do Amor</p>
+                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624541888/dp6_bonxmh.jpg" alt="" />
+                                </div>
+                                <div className="item carousel-item">
+                                    <div className="img-box">
+                                        <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624115325/Pngtree_stay_home_illustration_of_cute_6374931_p2gzas.png" alt="" />
+                                    </div>
+                                    <p className="overview mt-4 text-base"><b>Rosana</b>, Salgados</p>
+                                    <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624541888/dp_qb6na1.jpg" alt="" />
                                 </div>
                             </div>
                             {/* <!-- Carousel Controls --> */}
