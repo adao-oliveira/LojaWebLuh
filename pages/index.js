@@ -13,47 +13,170 @@ const Home = () => {
         </div>
 
         {/* <!-- Grid row --> */}
-        <div className="mt-4">
-          <h2 className="text-center"> Bolos </h2>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 pt-10 col-center m-auto">
+              {/* Bolos */}
+              <div className="depoimento">
+                <h2>Bolo</h2>
+              </div>
+              <div id="myCarousel" className="carousel slide" data-ride="carousel">
+                {/* <!-- Carousel --> */}
+                <div className="carousel-inner">
+                  {/* carousel 1 */}
+                  <div className="item carousel-item active">
+                    <div class="card-deck">
+                      <div class="card" style={{ width: '18rem' }}>
+                        <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                        <div className="card-body">
+                          <h5 className="card-title">Empada</h5>
+                          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" className="btn btn-danger">Veja mais</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 2 */}
+                  <div className="item carousel-item">
+                    <div class="card" style={{ width: '18rem' }}>
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <div className="card-body">
+                        <h5 className="card-title">Doce</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" className="btn btn-danger">Veja mais</a>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 2 */}
+                  <div className="item carousel-item">
+                    <div class="card" style={{ width: '18rem' }}>
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <div className="card-body">
+                        <h5 className="card-title">Salgado</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" className="btn btn-danger">Veja mais</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                {/* <!-- Carousel Controls --> */}
+                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="prev">
+                  <i className="fa fa-angle-left"></i>
+                </a>
+                <a className="carousel-control right carousel-control-next" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="next">
+                  <i className="fa fa-angle-right"></i>
+                </a>
+              </div>
+
+              {/* Bolos */}
+              <div className="depoimento">
+                <h2>Empada</h2>
+              </div>
+              <div id="myCarousel" className="carousel slide" data-ride="carousel">
+                {/* <!-- Carousel --> */}
+                <div className="carousel-inner">
+                  {/* carousel 1 */}
+                  <div className="item carousel-item active">
+                    <div class="card-deck">
+                      <div class="card" style={{ width: '18rem' }}>
+                        <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                        <div className="card-body">
+                          <h5 className="card-title">Empada</h5>
+                          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" className="btn btn-danger">Veja mais</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 2 */}
+                  <div className="item carousel-item">
+                    <div class="card" style={{ width: '18rem' }}>
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <div className="card-body">
+                        <h5 className="card-title">Doce</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" className="btn btn-danger">Veja mais</a>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 2 */}
+                  <div className="item carousel-item">
+                    <div class="card" style={{ width: '18rem' }}>
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <div className="card-body">
+                        <h5 className="card-title">Salgado</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" className="btn btn-danger">Veja mais</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                {/* <!-- Carousel Controls --> */}
+                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="prev">
+                  <i className="fa fa-angle-left"></i>
+                </a>
+                <a className="carousel-control right carousel-control-next" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="next">
+                  <i className="fa fa-angle-right"></i>
+                </a>
+              </div>
+
+              {/* Bolos */}
+              <div className="depoimento">
+                <h2>Doces</h2>
+              </div>
+              <div id="myCarousel" className="carousel slide" data-ride="carousel">
+                {/* <!-- Carousel --> */}
+                <div className="carousel-inner">
+                  {/* carousel 1 */}
+                  <div className="item carousel-item active">
+                    <div class="card-deck">
+                      <div class="card" style={{ width: '18rem' }}>
+                        <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                        <div className="card-body">
+                          <h5 className="card-title">Empada</h5>
+                          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" className="btn btn-danger">Veja mais</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 2 */}
+                  <div className="item carousel-item">
+                    <div class="card" style={{ width: '18rem' }}>
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <div className="card-body">
+                        <h5 className="card-title">Doce</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" className="btn btn-danger">Veja mais</a>
+                      </div>
+                    </div>
+                  </div>
+                  {/* carousel 2 */}
+                  <div className="item carousel-item">
+                    <div class="card" style={{ width: '18rem' }}>
+                      <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+                      <div className="card-body">
+                        <h5 className="card-title">Salgado</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" className="btn btn-danger">Veja mais</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                {/* <!-- Carousel Controls --> */}
+                <a className="carousel-control left carousel-control-prev" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="prev">
+                  <i className="fa fa-angle-left"></i>
+                </a>
+                <a className="carousel-control right carousel-control-next" style={{ marginTop: '20px' }} href="#myCarousel" data-slide="next">
+                  <i className="fa fa-angle-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row mt-4">
-          {/* <!-- Grid column --> */}
-          <div class="col-lg-4 col-md-12 mb-4">
-            {/* <!--Modal: nome--> */}
-            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-              </div>
-            </div>
-            {/* <!--Modal: Name--> */}
-              <img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
-                data-toggle="modal" data-target="#modal1" />
-          </div>
-          {/* <!-- Grid column --> */}
-          <div class="col-lg-4 col-md-6 mb-4">
-            {/* <!--Modal: Name--> */}
-            <div class="modal fade" id="modal6" tabindex="-1" role="dialog">
-              <div class="modal-dialog modal-lg" role="document">
-              </div>
-            </div>
-            {/* <!--Modal: Name--> */}
-              <img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-2.jpg" alt="video"
-                data-toggle="modal" data-target="#modal6" />
-          </div>
-          {/* <!-- Grid column --> */}
-          <div class="col-lg-4 col-md-6 mb-4">
-            {/* <!--Modal: Name--> */}
-            <div class="modal fade" id="modal4" tabindex="-1" role="dialog">
-              <div class="modal-dialog modal-lg" role="document">
-              </div>
-            </div>
-            {/* <!--Modal: Name--> */}
-              <img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
-                data-toggle="modal" data-target="#modal4" />
-          </div>
-          {/* <!-- Grid column --> */}
-        </div>
-        {/* <!-- Grid row --> */}
-        
       </div>
     </>
   );
