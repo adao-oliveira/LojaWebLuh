@@ -25,10 +25,10 @@ const Apresentacao = () => {
                             <h2 className="text-lg leading-relaxed" style={{fontFamily: 'Garamond'}}>
                                 Aproveite também para nos seguir nas redes sociais:
                                 <div className="social mt-4 my-2">
-                                <a href="#" target="_blank" className="long-share-btn facebook">
+                                <a href="https://www.facebook.com/luciana.valerio.180" target="_blank" className="long-share-btn facebook">
                                     <i className="fab fa-facebook"></i>
                                 </a>
-                                <a href="#" target="_blank" className="long-share-btn instagram">
+                                <a href="https://www.instagram.com/luuh_.miranda/" target="_blank" className="long-share-btn instagram">
                                     <i className="fab fa-instagram"></i>
                                 </a>
                                 <a href="https://wa.me/5511991781497?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20seu%20produto." target="_blank" className="long-share-btn whatsapp">

@@ -8,7 +8,7 @@ const Home = () => {
       <div>
         <div className="mt-32">
           <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
-            <source src="https://res.cloudinary.com/db5gm6hgs/video/upload/v1624326322/video_redrt0.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/db5gm6hgs/video/upload/v1624565774/videos%20home/20210624_1713192_s9dshd.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -22,7 +22,7 @@ const Home = () => {
               </div>
               <div id="myCarousel" className="carousel slide" data-ride="carousel">
                 {/* <!-- Carousel --> */}
-                <div className="carousel-inner">
+                <div className="carousel-inner" id="#bolos">
                   {/* carousel 1 */}
                   <div className="item carousel-item active">
                     <div class="card-deck">
