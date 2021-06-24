@@ -19,7 +19,7 @@ export default function Footer() {
       <footer>
         <div className="main-content">
           <div className="left box">
-            <h2>Sobre</h2>
+            <h1>Sobre</h1>
             <div className="content">
               <p>Apresentação</p>
               <div className="social">
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           <div className="center box">
-            <h2>Produtos</h2>
+            <h1>Produtos</h1>
             <div className="content">
               <ul>
                 <li>
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
 
           <div className="right box">
-            <h2>Fale conosco</h2>
+            <h1>Fale conosco</h1>
             <div className="content">
               {/* <form onSubmit={sendEmail}> */}
               <form>
@@ -85,7 +85,7 @@ export default function Footer() {
         <div className="copyright">
           <center>
             <span className="credit" style={{fontSize:'20px'}}><a href="/">Lu Cakes</a></span>
-            <br /><i className="far fa-copyright text-warning"></i>
+            <br /><i className="far fa-copyright text-danger"></i>
             <span> {new Date().getFullYear()} Todos os Direitos reservados</span>
           </center>
         </div>

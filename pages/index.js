@@ -69,7 +69,7 @@ const Home = () => {
                 </a>
               </div>
 
-              <h1 style={{borderColor: '1px solid #e5202a'}}></h1>
+              <h1 style={{borderColor: '1px solid #e5202a',border:'1px solid #e5202a'}}></h1>
 
               {/* SALGADOS */}
               <div className="depoimento">
@@ -124,7 +124,7 @@ const Home = () => {
                 </a>
               </div>
 
-              <h1 style={{borderColor: '1px solid #e5202a'}}></h1>
+              <h1 style={{borderColor: '1px solid #e5202a',border:'1px solid #e5202a'}}></h1>
 
               {/* DOCES */}
               <div className="depoimento">
