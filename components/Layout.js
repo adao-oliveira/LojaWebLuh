@@ -4,7 +4,7 @@ import Notify from './Notify'
 import Modal from './Modal'
 import Footer from './footer'
 
-function Layout({children}) {
+function Layout({ children }) {
     return (
         <div>
             <NavBar />

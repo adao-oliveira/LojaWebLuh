@@ -1,11 +1,11 @@
-(function($) {
+(function ($) {
   "use strict";
 
   /* ..............................................
-	   Fixed Menu
-	   ................................................. */
+     Fixed Menu
+     ................................................. */
 
-  $(window).on("scroll", function() {
+  $(window).on("scroll", function () {
     if ($(window).scrollTop() > 50) {
       $(".main-header").addClass("fixed-menu");
     } else {
@@ -15,17 +15,37 @@
 
   // close dropdown menu when clicking on an element
 
-  $(document).on('click', function(event) {
+  $(document).on('click', function (event) {
     var $clickedOn = $(event.target),
       $collapsableItems = $('.collapse'),
       isToggleButton = ($clickedOn.closest('.navbar-toggle').length == 1),
       isLink = ($clickedOn.closest('a').length == 1),
       isOutsideNavbar = ($clickedOn.parents('.navbar').length == 0);
     if ((!isToggleButton && isLink) || isOutsideNavbar) {
-      $collapsableItems.each(function() {
+      $collapsableItems.each(function () {
         $(this).collapse('hide');
       });
     }
   });
 
 })(jQuery);
+
+  // Exibe ou oculta o botão
+
+  $(document).ready(function() {
+    $(window).on("scroll", function() {
+      if ($(this).scrollTop() > 100) {
+        $("#back-to-top").fadeIn();
+      } else {
+        $("#back-to-top").fadeOut();
+      }
+    });
+    $("#back-to-top").click(function() {
+      $("html, body").animate({
+          scrollTop: 0,
+        },
+        600
+      );
+      return false;
+    });
+  });

@@ -81,7 +81,7 @@ function NavBar() {
     }
 
     return (
-        <header className="main-header mt-32">
+        <header className="main-header mb-32">
             <nav className="navbar navbar-expand-lg navbar-light navbar-default bootsnav">
                 <div className="container">
                     <div className="navbar-header">
@@ -98,7 +98,7 @@ function NavBar() {
                         </button>
                         <Link href="/">
                             <a className="navbar-brand">
-                                <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047756/logo_evcyld.jpg" className="logo" alt="Lu Cakes" />
+                                <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624559239/1624559178027_nowwt3.png" className="logo" alt="Lu Cakes" />
                             </a>
                         </Link>
                         <ul className="nav navbar-nav ml-auto">

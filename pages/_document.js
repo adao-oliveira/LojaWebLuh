@@ -29,6 +29,7 @@ class MyDocument extends Document {
                     <link rel="stylesheet" href="/css/bootsnav.css" />
                     <link rel="stylesheet" href="/css/bootstrap.min.css" />
                     <link rel="stylesheet" href="/css/all.css" />
+                    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
                     <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" />
                     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"></link>
                     <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet"></link>
@@ -53,6 +54,14 @@ class MyDocument extends Document {
                             <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624330267/whatsapp_aiqzbi.png" width="60px" height="60px" alt="Que tal fazermos um orçamento?" />
                         </a>
                     </div>
+                    <a
+                        href="#"
+                        id="back-to-top"
+                        title="Back to top"
+                        style={{ display: "none" }}
+                    >
+                        <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624651563/iconUP2_ty3e4g.png" />
+                    </a>
                 </body>
             </Html>
         )

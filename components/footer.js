@@ -16,6 +16,9 @@ import React from "react";
 export default function Footer() {
   return (
     <>
+      <div className="relative mt-16">
+        <img src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624591206/wave3_liwtb4.svg" className="w-full absolute bottom-full h-16 object-cover object-top" />
+      </div>
       <footer>
         <div className="main-content">
           <div className="left box">
@@ -72,21 +75,14 @@ export default function Footer() {
                   <button type="submit">Enviar</button>
                 </div>
               </form>
-              <div className="center box">
-              <ul className="text-center">
-                  <li>
-                    <a href="#">Que tal marcar um café?</a>
-                  </li>
-              </ul>
-              </div>
             </div>
           </div>
         </div>
         <div className="copyright">
           <center>
-            <span className="credit" style={{fontSize:'20px'}}><a href="/">Lu Cakes</a></span>
+            <span className="credit" style={{ fontSize: '20px' }}><a href="/">Lu Cakes</a></span>
             <br /><i className="far fa-copyright text-danger"></i>
-            <span> {new Date().getFullYear()} Todos os Direitos reservados</span>
+            <span className="text-danger"> {new Date().getFullYear()} Todos os Direitos reservados</span>
           </center>
         </div>
       </footer>
