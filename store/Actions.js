@@ -13,7 +13,7 @@ export const addToCart = (product, carrinho) => {
     return ({ type: 'NOTIFY', payload: {error: 'Este produto está fora de estoque'} }) 
 
     const check = carrinho.every(item => {
-        return item._id !== product_id
+        return item._id !== product._id
     })
 
     if(!check) return ({ type: 'NOTIFY', payload: {error: 'O produto já está adicionado ao carrinho'} }) 

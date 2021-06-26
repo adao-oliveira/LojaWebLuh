@@ -27,7 +27,7 @@ const Produtos = (props) => {
 
   const handleCheck = (id) => {
     products.forEach(product => {
-      if(product_id === id) product.checked = !product.checked
+      if(product._id === id) product.checked = !product.checked
     })
     setProducts([...products])
   }
@@ -44,7 +44,7 @@ const Produtos = (props) => {
       if(product.checked){
           deleteArr.push({
             data: '', 
-            id: product_id, 
+            id: product._id, 
             title: 'Excluir todos os produtos selecionados?', 
             type: 'DELETE_PRODUCT'
           })
@@ -86,7 +86,7 @@ const Produtos = (props) => {
           ? <h2>Nenhum produto</h2>
 
           : products.map(product => (
-            <ProdutoItem key={product_id} product={product} handleCheck={handleCheck} />
+            <ProdutoItem key={product._id} product={product} handleCheck={handleCheck} />
           ))
         }
       </div>
