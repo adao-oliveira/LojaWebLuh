@@ -10,7 +10,7 @@ const produtoItem = ({product, handleCheck}) => {
     const userLink = () => {
         return(
             <>
-                <Link href={`product/${product._id}`}>
+                <Link href={`product/${product_id}`}>
                     <a className="btn btn-success"
                     style={{marginRight: '5px', flex: 1}}>Visualizar</a>
                 </Link>
@@ -27,7 +27,7 @@ const produtoItem = ({product, handleCheck}) => {
     const adminLink = () => {
         return(
             <>
-                <Link href={`create/${product._id}`}>
+                <Link href={`create/${product_id}`}>
                     <a className="btn btn-dark"
                     style={{marginRight: '5px', flex: 1}}>Editar</a>
                 </Link>
@@ -37,7 +37,7 @@ const produtoItem = ({product, handleCheck}) => {
                 onClick={() => dispatch({
                     type: 'ADD_MODAL',
                     payload: [{ 
-                        data: '', id: product._id, 
+                        data: '', id: product_id, 
                         title: product.title, type: 'DELETE_PRODUCT' 
                     }]
                 })} >
@@ -54,7 +54,7 @@ const produtoItem = ({product, handleCheck}) => {
                 <input type="checkbox" checked={product.checked}
                 className="position-absolute"
                 style={{height: '20px', width: '20px'}}
-                onChange={() => handleCheck(product._id)} />
+                onChange={() => handleCheck(product_id)} />
             }
             <img className="card-img-top" src={product.images[0].url} alt={product.images[0].url} />
             <div className="card-body">
